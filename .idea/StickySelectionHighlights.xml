@@ -1,0 +1,1734 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="StickySelectionHighlights">
+    <option name="editorHighlights">
+      <map>
+        <entry key="/Dummy.txt">
+          <value>
+            <PaintGroupHighlightMap>
+              <option name="paintGroups">
+                <map>
+                  <entry key="0">
+                    <value>
+                      <EditorHighlightsForPaintGroup />
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </PaintGroupHighlightMap>
+          </value>
+        </entry>
+        <entry key="$APPLICATION_CONFIG_DIR$/scratches/scratch_10.txt">
+          <value>
+            <PaintGroupHighlightMap>
+              <option name="paintGroups">
+                <map>
+                  <entry key="0">
+                    <value>
+                      <EditorHighlightsForPaintGroup />
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </PaintGroupHighlightMap>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/.gitignore">
+          <value>
+            <PaintGroupHighlightMap>
+              <option name="paintGroups">
+                <map>
+                  <entry key="0">
+                    <value>
+                      <EditorHighlightsForPaintGroup />
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </PaintGroupHighlightMap>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/Readme.md">
+          <value>
+            <PaintGroupHighlightMap>
+              <option name="paintGroups">
+                <map>
+                  <entry key="0">
+                    <value>
+                      <EditorHighlightsForPaintGroup />
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </PaintGroupHighlightMap>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/client/build/style.css">
+          <value>
+            <PaintGroupHighlightMap>
+              <option name="paintGroups">
+                <map>
+                  <entry key="0">
+                    <value>
+                      <EditorHighlightsForPaintGroup />
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </PaintGroupHighlightMap>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/client/data/getRequestOptions.json">
+          <value>
+            <PaintGroupHighlightMap>
+              <option name="paintGroups">
+                <map>
+                  <entry key="0">
+                    <value>
+                      <EditorHighlightsForPaintGroup />
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </PaintGroupHighlightMap>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/client/package-lock.json">
+          <value>
+            <PaintGroupHighlightMap>
+              <option name="paintGroups">
+                <map>
+                  <entry key="0">
+                    <value>
+                      <EditorHighlightsForPaintGroup />
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </PaintGroupHighlightMap>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/client/package.json">
+          <value>
+            <PaintGroupHighlightMap>
+              <option name="paintGroups">
+                <map>
+                  <entry key="0">
+                    <value>
+                      <EditorHighlightsForPaintGroup />
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </PaintGroupHighlightMap>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/client/src/ApiResponseFixture.json">
+          <value>
+            <PaintGroupHighlightMap>
+              <option name="paintGroups">
+                <map>
+                  <entry key="0">
+                    <value>
+                      <EditorHighlightsForPaintGroup />
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </PaintGroupHighlightMap>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/client/src/VMFactory.js">
+          <value>
+            <PaintGroupHighlightMap>
+              <option name="paintGroups">
+                <map>
+                  <entry key="0">
+                    <value>
+                      <EditorHighlightsForPaintGroup />
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </PaintGroupHighlightMap>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/client/src/index.html">
+          <value>
+            <PaintGroupHighlightMap>
+              <option name="paintGroups">
+                <map>
+                  <entry key="0">
+                    <value>
+                      <EditorHighlightsForPaintGroup />
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </PaintGroupHighlightMap>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/client/src/index.js">
+          <value>
+            <PaintGroupHighlightMap>
+              <option name="paintGroups">
+                <map>
+                  <entry key="0">
+                    <value>
+                      <EditorHighlightsForPaintGroup />
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </PaintGroupHighlightMap>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/client/src/knockoutView.js">
+          <value>
+            <PaintGroupHighlightMap>
+              <option name="paintGroups">
+                <map>
+                  <entry key="0">
+                    <value>
+                      <EditorHighlightsForPaintGroup />
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </PaintGroupHighlightMap>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/client/src/ko-mapping-plugin.js">
+          <value>
+            <PaintGroupHighlightMap>
+              <option name="paintGroups">
+                <map>
+                  <entry key="0">
+                    <value>
+                      <EditorHighlightsForPaintGroup />
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </PaintGroupHighlightMap>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/client/src/style.scss">
+          <value>
+            <PaintGroupHighlightMap>
+              <option name="paintGroups">
+                <map>
+                  <entry key="0">
+                    <value>
+                      <EditorHighlightsForPaintGroup />
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </PaintGroupHighlightMap>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/client/task/buildHtml.js">
+          <value>
+            <PaintGroupHighlightMap>
+              <option name="paintGroups">
+                <map>
+                  <entry key="0">
+                    <value>
+                      <EditorHighlightsForPaintGroup />
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </PaintGroupHighlightMap>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/config.default.js">
+          <value>
+            <PaintGroupHighlightMap>
+              <option name="paintGroups">
+                <map>
+                  <entry key="0">
+                    <value>
+                      <EditorHighlightsForPaintGroup />
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </PaintGroupHighlightMap>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/content/Knowledgebase/Accessibility/aria-tags.md">
+          <value>
+            <PaintGroupHighlightMap>
+              <option name="paintGroups">
+                <map>
+                  <entry key="0">
+                    <value>
+                      <EditorHighlightsForPaintGroup />
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </PaintGroupHighlightMap>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/content/Knowledgebase/Hosting/compression.md">
+          <value>
+            <PaintGroupHighlightMap>
+              <option name="paintGroups">
+                <map>
+                  <entry key="0">
+                    <value>
+                      <EditorHighlightsForPaintGroup />
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </PaintGroupHighlightMap>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/content/Knowledgebase/Hosting/domains.md">
+          <value>
+            <PaintGroupHighlightMap>
+              <option name="paintGroups">
+                <map>
+                  <entry key="0">
+                    <value>
+                      <EditorHighlightsForPaintGroup />
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </PaintGroupHighlightMap>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/content/Knowledgebase/Hosting/https.md">
+          <value>
+            <PaintGroupHighlightMap>
+              <option name="paintGroups">
+                <map>
+                  <entry key="0">
+                    <value>
+                      <EditorHighlightsForPaintGroup />
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </PaintGroupHighlightMap>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/content/Knowledgebase/Progressive_Enhancement/collection.md">
+          <value>
+            <PaintGroupHighlightMap>
+              <option name="paintGroups">
+                <map>
+                  <entry key="0">
+                    <value>
+                      <EditorHighlightsForPaintGroup />
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </PaintGroupHighlightMap>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/content/Knowledgebase/SEO/bots.md">
+          <value>
+            <PaintGroupHighlightMap>
+              <option name="paintGroups">
+                <map>
+                  <entry key="0">
+                    <value>
+                      <EditorHighlightsForPaintGroup />
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </PaintGroupHighlightMap>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/content/Knowledgebase/SEO/canonical-tags.md">
+          <value>
+            <PaintGroupHighlightMap>
+              <option name="paintGroups">
+                <map>
+                  <entry key="0">
+                    <value>
+                      <EditorHighlightsForPaintGroup />
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </PaintGroupHighlightMap>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/content/Knowledgebase/SEO/collection.md">
+          <value>
+            <PaintGroupHighlightMap>
+              <option name="paintGroups">
+                <map>
+                  <entry key="0">
+                    <value>
+                      <EditorHighlightsForPaintGroup />
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </PaintGroupHighlightMap>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/content/Knowledgebase/SEO/content-guidelines.md">
+          <value>
+            <PaintGroupHighlightMap>
+              <option name="paintGroups">
+                <map>
+                  <entry key="0">
+                    <value>
+                      <EditorHighlightsForPaintGroup />
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </PaintGroupHighlightMap>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/content/Knowledgebase/SEO/keyword-optimizing.md">
+          <value>
+            <PaintGroupHighlightMap>
+              <option name="paintGroups">
+                <map>
+                  <entry key="0">
+                    <value>
+                      <EditorHighlightsForPaintGroup />
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </PaintGroupHighlightMap>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/content/Knowledgebase/SEO/links.md">
+          <value>
+            <PaintGroupHighlightMap>
+              <option name="paintGroups">
+                <map>
+                  <entry key="0">
+                    <value>
+                      <EditorHighlightsForPaintGroup />
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </PaintGroupHighlightMap>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/content/Knowledgebase/SEO/manifest.md">
+          <value>
+            <PaintGroupHighlightMap>
+              <option name="paintGroups">
+                <map>
+                  <entry key="0">
+                    <value>
+                      <EditorHighlightsForPaintGroup />
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </PaintGroupHighlightMap>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/content/Knowledgebase/SEO/metadata.md">
+          <value>
+            <PaintGroupHighlightMap>
+              <option name="paintGroups">
+                <map>
+                  <entry key="0">
+                    <value>
+                      <EditorHighlightsForPaintGroup />
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </PaintGroupHighlightMap>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/content/Knowledgebase/SEO/sitemaps.md">
+          <value>
+            <PaintGroupHighlightMap>
+              <option name="paintGroups">
+                <map>
+                  <entry key="0">
+                    <value>
+                      <EditorHighlightsForPaintGroup />
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </PaintGroupHighlightMap>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/content/Knowledgebase/SEO/structured-data.md">
+          <value>
+            <PaintGroupHighlightMap>
+              <option name="paintGroups">
+                <map>
+                  <entry key="0">
+                    <value>
+                      <EditorHighlightsForPaintGroup />
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </PaintGroupHighlightMap>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/content/Knowledgebase/SEO/wpo-requirements.md">
+          <value>
+            <PaintGroupHighlightMap>
+              <option name="paintGroups">
+                <map>
+                  <entry key="0">
+                    <value>
+                      <EditorHighlightsForPaintGroup />
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </PaintGroupHighlightMap>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/content/Knowledgebase/WPO/browser-caching.md">
+          <value>
+            <PaintGroupHighlightMap>
+              <option name="paintGroups">
+                <map>
+                  <entry key="0">
+                    <value>
+                      <EditorHighlightsForPaintGroup />
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </PaintGroupHighlightMap>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/content/Knowledgebase/seo.md">
+          <value>
+            <PaintGroupHighlightMap>
+              <option name="paintGroups">
+                <map>
+                  <entry key="0">
+                    <value>
+                      <EditorHighlightsForPaintGroup />
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </PaintGroupHighlightMap>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/content/coding/Pluralsight/html5-fundamentals.md">
+          <value>
+            <PaintGroupHighlightMap>
+              <option name="paintGroups">
+                <map>
+                  <entry key="0">
+                    <value>
+                      <EditorHighlightsForPaintGroup />
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </PaintGroupHighlightMap>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/content/coding/hosting/collection.md">
+          <value>
+            <PaintGroupHighlightMap>
+              <option name="paintGroups">
+                <map>
+                  <entry key="0">
+                    <value>
+                      <EditorHighlightsForPaintGroup />
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </PaintGroupHighlightMap>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/content/coding/hosting/compression.md">
+          <value>
+            <PaintGroupHighlightMap>
+              <option name="paintGroups">
+                <map>
+                  <entry key="0">
+                    <value>
+                      <EditorHighlightsForPaintGroup />
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </PaintGroupHighlightMap>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/content/coding/research/atomic.md">
+          <value>
+            <PaintGroupHighlightMap>
+              <option name="paintGroups">
+                <map>
+                  <entry key="0">
+                    <value>
+                      <EditorHighlightsForPaintGroup />
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </PaintGroupHighlightMap>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/content/coding/research/front-end/app-structure.md">
+          <value>
+            <PaintGroupHighlightMap>
+              <option name="paintGroups">
+                <map>
+                  <entry key="0">
+                    <value>
+                      <EditorHighlightsForPaintGroup />
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </PaintGroupHighlightMap>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/content/coding/research/front-end/browser-bundle.md">
+          <value>
+            <PaintGroupHighlightMap>
+              <option name="paintGroups">
+                <map>
+                  <entry key="0">
+                    <value>
+                      <EditorHighlightsForPaintGroup />
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </PaintGroupHighlightMap>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/content/coding/research/front-end/build-ext.md">
+          <value>
+            <PaintGroupHighlightMap>
+              <option name="paintGroups">
+                <map>
+                  <entry key="0">
+                    <value>
+                      <EditorHighlightsForPaintGroup />
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </PaintGroupHighlightMap>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/content/coding/research/front-end/build.md">
+          <value>
+            <PaintGroupHighlightMap>
+              <option name="paintGroups">
+                <map>
+                  <entry key="0">
+                    <value>
+                      <EditorHighlightsForPaintGroup />
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </PaintGroupHighlightMap>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/content/coding/research/front-end/client-rendering.md">
+          <value>
+            <PaintGroupHighlightMap>
+              <option name="paintGroups">
+                <map>
+                  <entry key="0">
+                    <value>
+                      <EditorHighlightsForPaintGroup />
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </PaintGroupHighlightMap>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/content/coding/research/front-end/linted-code.md">
+          <value>
+            <PaintGroupHighlightMap>
+              <option name="paintGroups">
+                <map>
+                  <entry key="0">
+                    <value>
+                      <EditorHighlightsForPaintGroup />
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </PaintGroupHighlightMap>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/content/coding/research/front-end/sum/js-overview.md">
+          <value>
+            <PaintGroupHighlightMap>
+              <option name="paintGroups">
+                <map>
+                  <entry key="0">
+                    <value>
+                      <EditorHighlightsForPaintGroup />
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </PaintGroupHighlightMap>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/content/coding/research/front-end/sum/js-ts-testing.md">
+          <value>
+            <PaintGroupHighlightMap>
+              <option name="paintGroups">
+                <map>
+                  <entry key="0">
+                    <value>
+                      <EditorHighlightsForPaintGroup />
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </PaintGroupHighlightMap>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/content/coding/research/front-end/transpiled-js.md">
+          <value>
+            <PaintGroupHighlightMap>
+              <option name="paintGroups">
+                <map>
+                  <entry key="0">
+                    <value>
+                      <EditorHighlightsForPaintGroup />
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </PaintGroupHighlightMap>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/content/coding/research/front-end/typescript-testing.md">
+          <value>
+            <PaintGroupHighlightMap>
+              <option name="paintGroups">
+                <map>
+                  <entry key="0">
+                    <value>
+                      <EditorHighlightsForPaintGroup />
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </PaintGroupHighlightMap>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/content/coding/seo/bots.md">
+          <value>
+            <PaintGroupHighlightMap>
+              <option name="paintGroups">
+                <map>
+                  <entry key="0">
+                    <value>
+                      <EditorHighlightsForPaintGroup />
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </PaintGroupHighlightMap>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/content/coding/seo/cache-busting.md">
+          <value>
+            <PaintGroupHighlightMap>
+              <option name="paintGroups">
+                <map>
+                  <entry key="0">
+                    <value>
+                      <EditorHighlightsForPaintGroup />
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </PaintGroupHighlightMap>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/content/coding/seo/collection.md">
+          <value>
+            <PaintGroupHighlightMap>
+              <option name="paintGroups">
+                <map>
+                  <entry key="0">
+                    <value>
+                      <EditorHighlightsForPaintGroup />
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </PaintGroupHighlightMap>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/content/coding/seo/sitemaps.md">
+          <value>
+            <PaintGroupHighlightMap>
+              <option name="paintGroups">
+                <map>
+                  <entry key="0">
+                    <value>
+                      <EditorHighlightsForPaintGroup />
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </PaintGroupHighlightMap>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/content/coding/test-projects/Game/random.md">
+          <value>
+            <PaintGroupHighlightMap>
+              <option name="paintGroups">
+                <map>
+                  <entry key="0">
+                    <value>
+                      <EditorHighlightsForPaintGroup />
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </PaintGroupHighlightMap>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/content/coding/test-projects/ammo.md">
+          <value>
+            <PaintGroupHighlightMap>
+              <option name="paintGroups">
+                <map>
+                  <entry key="0">
+                    <value>
+                      <EditorHighlightsForPaintGroup />
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </PaintGroupHighlightMap>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/content/coding/test-projects/htmlyzer.md">
+          <value>
+            <PaintGroupHighlightMap>
+              <option name="paintGroups">
+                <map>
+                  <entry key="0">
+                    <value>
+                      <EditorHighlightsForPaintGroup />
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </PaintGroupHighlightMap>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/content/coding/test-projects/puppeteer-finance.md">
+          <value>
+            <PaintGroupHighlightMap>
+              <option name="paintGroups">
+                <map>
+                  <entry key="0">
+                    <value>
+                      <EditorHighlightsForPaintGroup />
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </PaintGroupHighlightMap>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/content/coding/wpo/collection.md">
+          <value>
+            <PaintGroupHighlightMap>
+              <option name="paintGroups">
+                <map>
+                  <entry key="0">
+                    <value>
+                      <EditorHighlightsForPaintGroup />
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </PaintGroupHighlightMap>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/content/coding/wpo/loading-assets.md">
+          <value>
+            <PaintGroupHighlightMap>
+              <option name="paintGroups">
+                <map>
+                  <entry key="0">
+                    <value>
+                      <EditorHighlightsForPaintGroup />
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </PaintGroupHighlightMap>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/content/coding/wpo/loading-styles.md">
+          <value>
+            <PaintGroupHighlightMap>
+              <option name="paintGroups">
+                <map>
+                  <entry key="0">
+                    <value>
+                      <EditorHighlightsForPaintGroup />
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </PaintGroupHighlightMap>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/content/coding/wpo/paint-optimzation.md">
+          <value>
+            <PaintGroupHighlightMap>
+              <option name="paintGroups">
+                <map>
+                  <entry key="0">
+                    <value>
+                      <EditorHighlightsForPaintGroup />
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </PaintGroupHighlightMap>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/content/coding/wpo/responsive-image-sizes.md">
+          <value>
+            <PaintGroupHighlightMap>
+              <option name="paintGroups">
+                <map>
+                  <entry key="0">
+                    <value>
+                      <EditorHighlightsForPaintGroup />
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </PaintGroupHighlightMap>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/content/education/IHK/praesentation.md">
+          <value>
+            <PaintGroupHighlightMap>
+              <option name="paintGroups">
+                <map>
+                  <entry key="0">
+                    <value>
+                      <EditorHighlightsForPaintGroup />
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </PaintGroupHighlightMap>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/content/home/System-Doku/build-server.md">
+          <value>
+            <PaintGroupHighlightMap>
+              <option name="paintGroups">
+                <map>
+                  <entry key="0">
+                    <value>
+                      <EditorHighlightsForPaintGroup />
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </PaintGroupHighlightMap>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/content/home/einkaufsliste.md">
+          <value>
+            <PaintGroupHighlightMap>
+              <option name="paintGroups">
+                <map>
+                  <entry key="0">
+                    <value>
+                      <EditorHighlightsForPaintGroup />
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </PaintGroupHighlightMap>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/content/home/lists/enter.md">
+          <value>
+            <PaintGroupHighlightMap>
+              <option name="paintGroups">
+                <map>
+                  <entry key="0">
+                    <value>
+                      <EditorHighlightsForPaintGroup />
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </PaintGroupHighlightMap>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/content/home/lists/leave.md">
+          <value>
+            <PaintGroupHighlightMap>
+              <option name="paintGroups">
+                <map>
+                  <entry key="0">
+                    <value>
+                      <EditorHighlightsForPaintGroup />
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </PaintGroupHighlightMap>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/content/home/organisation.md">
+          <value>
+            <PaintGroupHighlightMap>
+              <option name="paintGroups">
+                <map>
+                  <entry key="0">
+                    <value>
+                      <EditorHighlightsForPaintGroup />
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </PaintGroupHighlightMap>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/content/projects/ggd/acc.md">
+          <value>
+            <PaintGroupHighlightMap>
+              <option name="paintGroups">
+                <map>
+                  <entry key="0">
+                    <value>
+                      <EditorHighlightsForPaintGroup />
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </PaintGroupHighlightMap>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/content/projects/ggd/time.md">
+          <value>
+            <PaintGroupHighlightMap>
+              <option name="paintGroups">
+                <map>
+                  <entry key="0">
+                    <value>
+                      <EditorHighlightsForPaintGroup />
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </PaintGroupHighlightMap>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/content/projects/ggd/todos.md">
+          <value>
+            <PaintGroupHighlightMap>
+              <option name="paintGroups">
+                <map>
+                  <entry key="0">
+                    <value>
+                      <EditorHighlightsForPaintGroup />
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </PaintGroupHighlightMap>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/content/uml/.gitignore">
+          <value>
+            <PaintGroupHighlightMap>
+              <option name="paintGroups">
+                <map>
+                  <entry key="0">
+                    <value>
+                      <EditorHighlightsForPaintGroup />
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </PaintGroupHighlightMap>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/content/work/atomic.md">
+          <value>
+            <PaintGroupHighlightMap>
+              <option name="paintGroups">
+                <map>
+                  <entry key="0">
+                    <value>
+                      <EditorHighlightsForPaintGroup />
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </PaintGroupHighlightMap>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/content/work/azubi-probleme.md">
+          <value>
+            <PaintGroupHighlightMap>
+              <option name="paintGroups">
+                <map>
+                  <entry key="0">
+                    <value>
+                      <EditorHighlightsForPaintGroup />
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </PaintGroupHighlightMap>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/content/work/build-server-probleme.md">
+          <value>
+            <PaintGroupHighlightMap>
+              <option name="paintGroups">
+                <map>
+                  <entry key="0">
+                    <value>
+                      <EditorHighlightsForPaintGroup />
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </PaintGroupHighlightMap>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/content/work/build-server-refactorings.md">
+          <value>
+            <PaintGroupHighlightMap>
+              <option name="paintGroups">
+                <map>
+                  <entry key="0">
+                    <value>
+                      <EditorHighlightsForPaintGroup />
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </PaintGroupHighlightMap>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/content/work/build-server-zustand.md">
+          <value>
+            <PaintGroupHighlightMap>
+              <option name="paintGroups">
+                <map>
+                  <entry key="0">
+                    <value>
+                      <EditorHighlightsForPaintGroup />
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </PaintGroupHighlightMap>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/content/work/functional-tests.md">
+          <value>
+            <PaintGroupHighlightMap>
+              <option name="paintGroups">
+                <map>
+                  <entry key="0">
+                    <value>
+                      <EditorHighlightsForPaintGroup />
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </PaintGroupHighlightMap>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/content/work/js-deployment.md">
+          <value>
+            <PaintGroupHighlightMap>
+              <option name="paintGroups">
+                <map>
+                  <entry key="0">
+                    <value>
+                      <EditorHighlightsForPaintGroup />
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </PaintGroupHighlightMap>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/content/work/personalAkte/Self/learn-log-3.md">
+          <value>
+            <PaintGroupHighlightMap>
+              <option name="paintGroups">
+                <map>
+                  <entry key="0">
+                    <value>
+                      <EditorHighlightsForPaintGroup />
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </PaintGroupHighlightMap>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/content/work/raum-logik.md">
+          <value>
+            <PaintGroupHighlightMap>
+              <option name="paintGroups">
+                <map>
+                  <entry key="0">
+                    <value>
+                      <EditorHighlightsForPaintGroup />
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </PaintGroupHighlightMap>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/content/work/test-motivation.md">
+          <value>
+            <PaintGroupHighlightMap>
+              <option name="paintGroups">
+                <map>
+                  <entry key="0">
+                    <value>
+                      <EditorHighlightsForPaintGroup />
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </PaintGroupHighlightMap>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/content/work/testing-ci-diff.md">
+          <value>
+            <PaintGroupHighlightMap>
+              <option name="paintGroups">
+                <map>
+                  <entry key="0">
+                    <value>
+                      <EditorHighlightsForPaintGroup />
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </PaintGroupHighlightMap>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/content/work/testing.md">
+          <value>
+            <PaintGroupHighlightMap>
+              <option name="paintGroups">
+                <map>
+                  <entry key="0">
+                    <value>
+                      <EditorHighlightsForPaintGroup />
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </PaintGroupHighlightMap>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/contentFixture/consetetur/amet/aliquyam.md">
+          <value>
+            <PaintGroupHighlightMap>
+              <option name="paintGroups">
+                <map>
+                  <entry key="0">
+                    <value>
+                      <EditorHighlightsForPaintGroup />
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </PaintGroupHighlightMap>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/contentFixture/consetetur/amet/erat.md">
+          <value>
+            <PaintGroupHighlightMap>
+              <option name="paintGroups">
+                <map>
+                  <entry key="0">
+                    <value>
+                      <EditorHighlightsForPaintGroup />
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </PaintGroupHighlightMap>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/contentFixture/diam/dolore/erat.md">
+          <value>
+            <PaintGroupHighlightMap>
+              <option name="paintGroups">
+                <map>
+                  <entry key="0">
+                    <value>
+                      <EditorHighlightsForPaintGroup />
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </PaintGroupHighlightMap>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/contentFixture/diam/dolore/sed.md">
+          <value>
+            <PaintGroupHighlightMap>
+              <option name="paintGroups">
+                <map>
+                  <entry key="0">
+                    <value>
+                      <EditorHighlightsForPaintGroup />
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </PaintGroupHighlightMap>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/contentFixture/diam/eirmod/aliquyam.md">
+          <value>
+            <PaintGroupHighlightMap>
+              <option name="paintGroups">
+                <map>
+                  <entry key="0">
+                    <value>
+                      <EditorHighlightsForPaintGroup />
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </PaintGroupHighlightMap>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/contentFixture/diam/eirmod/erat.md">
+          <value>
+            <PaintGroupHighlightMap>
+              <option name="paintGroups">
+                <map>
+                  <entry key="0">
+                    <value>
+                      <EditorHighlightsForPaintGroup />
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </PaintGroupHighlightMap>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/contentFixture/diam/eirmod/voluptua.md">
+          <value>
+            <PaintGroupHighlightMap>
+              <option name="paintGroups">
+                <map>
+                  <entry key="0">
+                    <value>
+                      <EditorHighlightsForPaintGroup />
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </PaintGroupHighlightMap>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/contentFixture/dolor/dolore/erat.md">
+          <value>
+            <PaintGroupHighlightMap>
+              <option name="paintGroups">
+                <map>
+                  <entry key="0">
+                    <value>
+                      <EditorHighlightsForPaintGroup />
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </PaintGroupHighlightMap>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/contentFixture/dolor/dolore/sed.md">
+          <value>
+            <PaintGroupHighlightMap>
+              <option name="paintGroups">
+                <map>
+                  <entry key="0">
+                    <value>
+                      <EditorHighlightsForPaintGroup />
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </PaintGroupHighlightMap>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/contentFixture/dolor/eirmod/aliquyam.md">
+          <value>
+            <PaintGroupHighlightMap>
+              <option name="paintGroups">
+                <map>
+                  <entry key="0">
+                    <value>
+                      <EditorHighlightsForPaintGroup />
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </PaintGroupHighlightMap>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/contentFixture/dolor/eirmod/erat.md">
+          <value>
+            <PaintGroupHighlightMap>
+              <option name="paintGroups">
+                <map>
+                  <entry key="0">
+                    <value>
+                      <EditorHighlightsForPaintGroup />
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </PaintGroupHighlightMap>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/contentFixture/dolor/eirmod/voluptua.md">
+          <value>
+            <PaintGroupHighlightMap>
+              <option name="paintGroups">
+                <map>
+                  <entry key="0">
+                    <value>
+                      <EditorHighlightsForPaintGroup />
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </PaintGroupHighlightMap>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/contentFixture/et/aliquyam.md">
+          <value>
+            <PaintGroupHighlightMap>
+              <option name="paintGroups">
+                <map>
+                  <entry key="0">
+                    <value>
+                      <EditorHighlightsForPaintGroup />
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </PaintGroupHighlightMap>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/contentFixture/ipsum/invidunt/aliquyam.md">
+          <value>
+            <PaintGroupHighlightMap>
+              <option name="paintGroups">
+                <map>
+                  <entry key="0">
+                    <value>
+                      <EditorHighlightsForPaintGroup />
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </PaintGroupHighlightMap>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/contentFixture/ipsum/invidunt/erat.md">
+          <value>
+            <PaintGroupHighlightMap>
+              <option name="paintGroups">
+                <map>
+                  <entry key="0">
+                    <value>
+                      <EditorHighlightsForPaintGroup />
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </PaintGroupHighlightMap>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/contentFixture/ipsum/invidunt/voluptua.md">
+          <value>
+            <PaintGroupHighlightMap>
+              <option name="paintGroups">
+                <map>
+                  <entry key="0">
+                    <value>
+                      <EditorHighlightsForPaintGroup />
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </PaintGroupHighlightMap>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/contentFixture/sadipscing/sit/diam.md">
+          <value>
+            <PaintGroupHighlightMap>
+              <option name="paintGroups">
+                <map>
+                  <entry key="0">
+                    <value>
+                      <EditorHighlightsForPaintGroup />
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </PaintGroupHighlightMap>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/contentFixture/voluptua.md">
+          <value>
+            <PaintGroupHighlightMap>
+              <option name="paintGroups">
+                <map>
+                  <entry key="0">
+                    <value>
+                      <EditorHighlightsForPaintGroup />
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </PaintGroupHighlightMap>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/contentFixture2/Features/client.md">
+          <value>
+            <PaintGroupHighlightMap>
+              <option name="paintGroups">
+                <map>
+                  <entry key="0">
+                    <value>
+                      <EditorHighlightsForPaintGroup />
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </PaintGroupHighlightMap>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/contentFixture2/Features/server.md">
+          <value>
+            <PaintGroupHighlightMap>
+              <option name="paintGroups">
+                <map>
+                  <entry key="0">
+                    <value>
+                      <EditorHighlightsForPaintGroup />
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </PaintGroupHighlightMap>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/contentFixture2/server/koaServer.md">
+          <value>
+            <PaintGroupHighlightMap>
+              <option name="paintGroups">
+                <map>
+                  <entry key="0">
+                    <value>
+                      <EditorHighlightsForPaintGroup />
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </PaintGroupHighlightMap>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/createFixture.js">
+          <value>
+            <PaintGroupHighlightMap>
+              <option name="paintGroups">
+                <map>
+                  <entry key="0">
+                    <value>
+                      <EditorHighlightsForPaintGroup />
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </PaintGroupHighlightMap>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/knowledgebase.js">
+          <value>
+            <PaintGroupHighlightMap>
+              <option name="paintGroups">
+                <map>
+                  <entry key="0">
+                    <value>
+                      <EditorHighlightsForPaintGroup />
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </PaintGroupHighlightMap>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/knowledgebase.md">
+          <value>
+            <PaintGroupHighlightMap>
+              <option name="paintGroups">
+                <map>
+                  <entry key="0">
+                    <value>
+                      <EditorHighlightsForPaintGroup />
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </PaintGroupHighlightMap>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/koaServer.js">
+          <value>
+            <PaintGroupHighlightMap>
+              <option name="paintGroups">
+                <map>
+                  <entry key="0">
+                    <value>
+                      <EditorHighlightsForPaintGroup />
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </PaintGroupHighlightMap>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/multiple-instances.js">
+          <value>
+            <PaintGroupHighlightMap>
+              <option name="paintGroups">
+                <map>
+                  <entry key="0">
+                    <value>
+                      <EditorHighlightsForPaintGroup />
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </PaintGroupHighlightMap>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/package.json">
+          <value>
+            <PaintGroupHighlightMap>
+              <option name="paintGroups">
+                <map>
+                  <entry key="0">
+                    <value>
+                      <EditorHighlightsForPaintGroup />
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </PaintGroupHighlightMap>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/projectPrep/nav.js">
+          <value>
+            <PaintGroupHighlightMap>
+              <option name="paintGroups">
+                <map>
+                  <entry key="0">
+                    <value>
+                      <EditorHighlightsForPaintGroup />
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </PaintGroupHighlightMap>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/projectPrep/nav.json">
+          <value>
+            <PaintGroupHighlightMap>
+              <option name="paintGroups">
+                <map>
+                  <entry key="0">
+                    <value>
+                      <EditorHighlightsForPaintGroup />
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </PaintGroupHighlightMap>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/koaServer.js">
+          <value>
+            <PaintGroupHighlightMap>
+              <option name="paintGroups">
+                <map>
+                  <entry key="0">
+                    <value>
+                      <EditorHighlightsForPaintGroup />
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </PaintGroupHighlightMap>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/task/buildHtml.js">
+          <value>
+            <PaintGroupHighlightMap>
+              <option name="paintGroups">
+                <map>
+                  <entry key="0">
+                    <value>
+                      <EditorHighlightsForPaintGroup />
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </PaintGroupHighlightMap>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>

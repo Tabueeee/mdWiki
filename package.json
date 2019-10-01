@@ -1,0 +1,17 @@
+{
+  "name": "ko-wiki-example",
+  "version": "1.0.0",
+  "description": "",
+  "main": "config.default.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "glob": "^7.1.4",
+    "koa": "^2.8.2",
+    "marked": "^0.7.0"
+  }
+}
