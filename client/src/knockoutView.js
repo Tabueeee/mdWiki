@@ -44,13 +44,31 @@ module.exports.registerElements = function (categories, data) {
     });
 
     ko.components.register('nav', {
-        template: '<div data-bind="template: { nodes: $componentTemplateNodes, data: {navItems: navItems} }"></div>',
+        template: `<div>
+        <div data-bind="foreach: navItems">
+            <div class="category">
+                <h1 data-bind="text: name"></h1>
+                <div data-bind="foreach: entries">
+                    <div class="sub-category">
+                        <h2 data-bind="text: 'SC: '+name, click: $component.toggle.bind($component, $parent)"></h2>
+                        <div data-bind="visible: !collapsed">
+                            <ul data-bind="foreach: items">
+                                <li><a data-bind="click: $root.changePage.bind($root, url), text: topic"></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>`,
         viewModel: function () {
             this.navItems = ko.observableArray(categories);
             this.toggle = function (subcategory, clickedEntry) {
                 console.log([subcategory, subcategory.entries]);
                 subcategory.entries.replace(clickedEntry, Object.assign({}, clickedEntry, {collapsed: !clickedEntry.collapsed}));
             };
+            console.log('navItems');
+            console.log(this.navItems);
         }
     });
 

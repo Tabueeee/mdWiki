@@ -53,7 +53,14 @@ app.use(async ctx => {
         ctx.body = '(function(data, window){console.log(data);window.data = data;' + fs.readFileSync(__dirname + '/../client/dist/bundle.js', 'utf8') + '})(' + JSON.stringify(data) + ', window);';
 
         return;
+    } else if (ctx.path === '/style.css') {
+        ctx.type = 'text/css';
+
+        ctx.body = fs.readFileSync(__dirname + '/../client/build/style.css', 'utf8');
+
+        return;
     }
+
     console.log(ctx.path);
     console.log(data[0]);
     console.log(ctx.request.querystring.includes('content=1'));
@@ -69,8 +76,15 @@ app.use(async ctx => {
 
         } else {
             ctx.type = 'text/html';
-            let htmlContent = fs.readFileSync(__dirname + '/../client/dist/index.html', 'utf8');
+            let htmlContent = fs.readFileSync(__dirname + '/../client/src/index.html', 'utf8');
             let pageHtmlContent = marked(pageContent);
+            htmlContent = htmlContent.replace('{{nav}}', `
+        <div>
+        <ul>
+            ${dataToLinkList.call(null, data)}
+        </ul>
+        </div>
+        `);
             ctx.body = htmlContent.replace('{{content}}', pageHtmlContent);
         }
 

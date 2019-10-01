@@ -1,4 +1,4 @@
-# G:/app/wiki2/client/src/VMFactory.js
+# G:/dev/01_projects/mdWiki/client/src/VMFactory.js
 ```js
 const mapByProp = function (data, propName) {
     return data.reduce((groups, item) => {

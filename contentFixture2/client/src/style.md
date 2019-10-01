@@ -1,4 +1,4 @@
-# G:/app/wiki2/client/src/style.scss
+# G:/dev/01_projects/mdWiki/client/src/style.scss
 ```js
 
 .content-wrap {

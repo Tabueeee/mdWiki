@@ -1,4 +1,4 @@
-# G:/app/wiki2/client/src/main.js
+# G:/dev/01_projects/mdWiki/client/src/main.js
 ```js
 const vmFactory = require('./VMFactory');
 const koView = require('./knockoutView');
