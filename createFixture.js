@@ -4,13 +4,17 @@ const fs = require('fs');
 
 (async () => {
 
-    let files = await glob(__dirname + '/client/src/*');
+    let files = await glob(__dirname + '/client/src/**/*.+(js|html|scss)');
 
     for (let file of files) {
         writeFileFixture(file, 'client/', 'contentFixture2/client/');
     }
 
-    writeFileFixture('G:/app/wiki2/koaServer.js', '/koaServer', '/contentFixture2/server/koaServer');
+    let serverFiles = await glob(__dirname + '/src/*');
+
+    for (let file of serverFiles) {
+        writeFileFixture(file, 'src/', 'contentFixture2/server/src/');
+    }
 })();
 
 
@@ -25,5 +29,4 @@ function writeFileFixture(filePath, replace, targetPath) {
 
     console.log('write to: ' + path);
     fs.writeFileSync(path, content);
-
 }
