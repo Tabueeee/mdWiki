@@ -1,0 +1,48 @@
+# G:/dev/01_projects/mdWiki/client/src/index.html
+```js
+<html xmlns="http://www.w3.org/1999/xhtml" lang="de">
+
+<head>
+    <title>My-Wiki</title>
+    <link rel="preload" href="/style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/style.css"></noscript>
+    <link rel="preload" href="/bundle.js" as="script">
+
+    <script async src="/bundle.js"></script>
+
+    <script async src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/highlight.min.js"
+            onload="hljs.initHighlightingOnLoad();"></script>
+
+    <!--    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/styles/default.min.css">-->
+</head>
+
+<body>
+<div class="ko-root content-wrap">
+    <nav>
+        <div data-bind="component: 'navSearch', visible: true" class="ko-search" style="display:none;">
+            <div class="nav-search-content">
+                <input type="text" data-bind="textInput: searchString" placeholder="search something..." \>
+                <button type="button" data-bind="click: searchString('')">Clear</button>
+                <ul data-bind="foreach: filteredItems">
+                    <li>
+                        <a data-bind="click: $root.changePage.bind($root, url), text: category+'/'+subcategory+'/'+topic"></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="ko-nav" data-bind="component: 'nav'">
+            {{nav}}
+        </div>
+    </nav>
+    <main>
+        <article>
+            <div id="content">
+                {{content}}
+            </div>
+        </article>
+    </main>
+</div>
+</body>
+</html>
+ ```
