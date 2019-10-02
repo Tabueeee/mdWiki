@@ -2,7 +2,6 @@
 ```js
 const ko = require('knockout');
 const navTemplate = require('./nav-template.html');
-const changePage = require('./pageChanger')().changePage;
 
 module.exports.registerElements = function (categories, data) {
     categories.forEach(function (category) {
@@ -28,22 +27,20 @@ module.exports.registerElements = function (categories, data) {
         viewModel: function () {
             this.navItems = ko.observableArray(categories);
             this.toggle = function (subcategory, clickedEntry) {
-                console.log([subcategory, subcategory.entries]);
                 subcategory.entries.replace(clickedEntry, Object.assign({}, clickedEntry, {collapsed: !clickedEntry.collapsed}));
             };
-            console.log('navItems');
-            console.log(this.navItems);
         }
     });
 
     let showSpinner = ko.observable(false);
+    const changePage = require('./pageChanger')(showSpinner).changePage;
 
     showSpinner.subscribe((newValue) => {
         if (!newValue) {
-            ko.applyBindings({changePage: changePage.bind(null, true, showSpinner)}, document.getElementById('content-loaded'));
+            ko.applyBindings({changePage: changePage.bind(null, true)}, document.getElementById('content-loaded'));
         }
     });
 
-    ko.applyBindings({changePage: changePage.bind(null, true, showSpinner), showSpinner: showSpinner});
+    ko.applyBindings({changePage: changePage.bind(null, true), showSpinner: showSpinner});
 }
  ```

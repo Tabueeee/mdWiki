@@ -6,18 +6,8 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="description" content="Wiki">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="preload" href="/style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript>
-        <link rel="stylesheet" href="/style.css">
-    </noscript>
+    <link rel="preload" href="/style.css" as="style">
     <link rel="preload" href="/bundle.js" as="script">
-
-    <script defer src="/bundle.js"></script>
-
-    <script defer src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/highlight.min.js"
-            onload="hljs.initHighlightingOnLoad();"></script>
-
-    <!--    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/styles/default.min.css">-->
 </head>
 
 <body>
@@ -27,8 +17,9 @@
         <div class="header-title-block"><span class="header-title">Mock 1</span></div>
         <div class="header-title-block"><span class="header-title">Mock 2</span></div>
         <div class="header-title-block"><span class="header-title">Mock 3</span></div>
-        <a class="logo" data-bind="click: $root.changePage.bind($root, '/index.html')"><img
-                src="http://lorempixel.com/200/100/"></a>
+        <a class="logo" data-bind="click: $root.changePage.bind($root, '/index.html')">
+            <img src="/lorempixel.jpg" alt="logo">
+        </a>
         <div style="clear: both"></div>
     </header>
     <div class="content-wrap">
@@ -64,5 +55,27 @@
         </main>
     </div>
 </div>
+<script>
+    var style = document.createElement('link');
+    style.rel = 'stylesheet';
+    style.setAttribute('href', '/style.css');
+    document.head.appendChild(style);
+
+    var script = document.createElement('script');
+    script.src = '/bundle.js';
+    script.setAttribute('defer', '');
+    document.body.appendChild(script);
+
+    window.addEventListener('load', (event) => {
+        setTimeout(function () {
+            script = document.createElement('script');
+            script.src = '//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/highlight.min.js';
+            script.setAttribute('defer', '');
+            script.setAttribute('onload', 'hljs.initHighlightingOnLoad();');
+            document.body.appendChild(script);
+        }, 0);
+    });
+</script>
+
 </body>
 </html>

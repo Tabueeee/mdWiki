@@ -2,7 +2,7 @@
 ```js
 const getRequestOptions = require('../../data/getRequestOptions.json');
 
-module.exports = function () {
+module.exports = function (signalLoadingState) {
 
     window.addEventListener('popstate', (event) => {
         changePage(false, event.target.location.href.replace('http://127.0.0.1:3001', ''));
@@ -10,7 +10,7 @@ module.exports = function () {
 
     let rejectPageChangePromise = () => undefined;
 
-    function changePage(push, signalLoadingState, link) {
+    function changePage(push, link) {
         let contentElement = document.getElementById('content');
         let contentNode = document.createElement('div');
         contentNode.setAttribute('id', 'content-loaded');

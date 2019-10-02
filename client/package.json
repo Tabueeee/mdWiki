@@ -7,7 +7,10 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "bundle": "browserify -t [ stringify --extensions [.html] ] --debug src/script/main.js > dist/bundle.js",
     "preuglify": "npm run bundle",
-    "uglify": "uglifyjs dist/bundle.js --compress --mangle > dist/bundle.min.js"
+    "uglify": "uglifyjs dist/bundle.js --compress --mangle > dist/bundle.min.js",
+    "build-html": "./node_modules/.bin/html-minifier --collapse-whitespace -o ./dist/index.html ./src/index.html",
+    "build-css": "node task/cssmin.js",
+    "all": "npm run build-css && npm run build-html && npm run uglify"
   },
   "author": "",
   "license": "ISC",
@@ -16,6 +19,8 @@
     "knockout": "^3.5.0"
   },
   "devDependencies": {
+    "clean-css": "^4.2.1",
+    "html-minifier": "^4.0.0",
     "posthtml": "^0.11.6",
     "posthtml-inline-assets": "^3.0.0",
     "stringify": "^5.2.0",

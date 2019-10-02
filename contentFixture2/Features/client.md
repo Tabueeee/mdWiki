@@ -9,6 +9,7 @@
     - show spinner
 - \[SEO] full dom render without any JS
 - \[WPO] FMP without any JS
+- \[WPO] FMP 80ms <= FMP <= 120ms
 - \[Accessibility] screen-reader support -> usable (no-css & no-js)
 - < 50 lines of Framework specific code
 
