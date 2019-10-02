@@ -1,47 +1,70 @@
 # G:/dev/01_projects/mdWiki/client/src/index.html
 ```js
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="de">
 
 <head>
-    <title>My-Wiki</title>
+    <title>MD-Wiki</title>
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="description" content="Wiki">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="preload" href="/style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="/style.css"></noscript>
+    <noscript>
+        <link rel="stylesheet" href="/style.css">
+    </noscript>
     <link rel="preload" href="/bundle.js" as="script">
 
-    <script async src="/bundle.js"></script>
+    <script defer src="/bundle.js"></script>
 
-    <script async src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/highlight.min.js"
+    <script defer src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/highlight.min.js"
             onload="hljs.initHighlightingOnLoad();"></script>
 
     <!--    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/styles/default.min.css">-->
 </head>
 
 <body>
-<div class="ko-root content-wrap">
-    <nav>
-        <div data-bind="component: 'navSearch', visible: true" class="ko-search" style="display:none;">
-            <div class="nav-search-content">
-                <input type="text" data-bind="textInput: searchString" placeholder="search something..." \>
-                <button type="button" data-bind="click: searchString('')">Clear</button>
-                <ul data-bind="foreach: filteredItems">
-                    <li>
-                        <a data-bind="click: $root.changePage.bind($root, url), text: category+'/'+subcategory+'/'+topic"></a>
-                    </li>
-                </ul>
+<div class="ko-root">
+    <header>
+        <div class="header-title-block"><span class="header-title">MD-Wiki</span></div>
+        <div class="header-title-block"><span class="header-title">Mock 1</span></div>
+        <div class="header-title-block"><span class="header-title">Mock 2</span></div>
+        <div class="header-title-block"><span class="header-title">Mock 3</span></div>
+        <a class="logo" data-bind="click: $root.changePage.bind($root, '/index.html')"><img
+                src="http://lorempixel.com/200/100/"></a>
+        <div style="clear: both"></div>
+    </header>
+    <div class="content-wrap">
+        <nav>
+            <div data-bind="component: 'navSearch', visible: true" class="ko-search" style="display:none;">
+                <div class="nav-search-content">
+                    <label>
+                        <span class="nav-search-title">File-Search</span>
+                        <input type="text" data-bind="textInput: searchString" placeholder="search something..." \>
+                    </label>
+                    <button type="button" data-bind="click: searchString.bind(null, '')">Clear</button>
+                    <ul data-bind="foreach: filteredItems">
+                        <li>
+                            <a data-bind="click: $root.changePage.bind($root, url), text: category+'/'+subcategory+'/'+topic"></a>
+                        </li>
+                    </ul>
+                </div>
             </div>
-        </div>
 
-        <div class="ko-nav" data-bind="component: 'nav'">
-            {{nav}}
-        </div>
-    </nav>
-    <main>
-        <article>
-            <div id="content">
-                {{content}}
+            <div class="ko-nav" data-bind="component: 'nav'">
+                {{nav}}
             </div>
-        </article>
-    </main>
+        </nav>
+        <main>
+            <article>
+                <div data-bind="visible: $root.showSpinner" style="display: none;">
+                    <div id="loading"><strong>loading...</strong><span></span></div>
+                </div>
+                <div id="content">
+                    {{content}}
+                </div>
+            </article>
+        </main>
+    </div>
 </div>
 </body>
 </html>

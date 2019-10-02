@@ -5,9 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "serve": "http-server ./src/",
     "bundle": "browserify -t [ stringify --extensions [.html] ] --debug src/script/main.js > dist/bundle.js",
-    "build-html": "node task/buildHtml.js"
+    "preuglify": "npm run bundle",
+    "uglify": "uglifyjs dist/bundle.js --compress --mangle > dist/bundle.min.js"
   },
   "author": "",
   "license": "ISC",
@@ -16,9 +16,9 @@
     "knockout": "^3.5.0"
   },
   "devDependencies": {
-    "http-server": "^0.11.1",
     "posthtml": "^0.11.6",
     "posthtml-inline-assets": "^3.0.0",
-    "stringify": "^5.2.0"
+    "stringify": "^5.2.0",
+    "uglify-es": "^3.3.9"
   }
 }

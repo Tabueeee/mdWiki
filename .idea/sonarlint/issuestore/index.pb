@@ -1,8 +1,6 @@
 
 S
 #.idea/sonarlint/issuestore/index.pb,9\f\9fe84ebb15faf917b7def6236dba604453cc61e0
-@
-knowledgebase.js,a\1\a12a7d96ae1694f8f6dd443d619afb78b1ad81a2
 <
 package.json,7\0\7030d0b2f71b999ff89a343de08c414af32fc93a
 H
@@ -19,26 +17,26 @@ F
 client/build/style.css,0\1\01b896219a9d68bc9b30307068bbf52a8d3477df
 E
 client/src/style.scss,1\e\1ec9c6f2b9154b9ca96ba226ee36ed8b3ea093e4
-H
-client/task/buildHtml.js,1\2\1279a8ba2e5b5c11434c6f96806cfcfde8b0c5c7
 @
 createFixture.js,3\c\3c312a530aec521d7bc9c9b495f9f10bd54cc443
-S
-#contentFixture2/server/koaServer.md,0\4\04ba5ae91356e1812fdb8c8a34f5c5a5fded2000
-B
-client/src/main.js,5\c\5c1eb176f6fa46a4009688c39a5af8cf997d05da
 R
 "contentFixture2/Features/server.md,5\6\56eccc38e302d0d334229f55eb2e58f1f7462410
-J
-client/src/knockoutView.js,9\f\9f9f165cc4410fcdc7ad9ede29d5a85c090a9410
-G
-client/src/VMFactory.js,0\0\009c53066522116394fc14e9495399d56ea00690
 R
 "contentFixture2/Features/client.md,2\0\20d6f6b8532fbe4cf009d7047d617755664c2dee
 :
 
 .gitignore,a\5\a5cc2925ca8258af241be7e5b0381edf30266302
-H
-client/src/overview.html,2\4\24d6e8ed3b7e08d1b4ee89d294c83de27f9ffd07
 @
 src/koaServer.js,e\8\e8756c21fa6bdb70182f795c02cfff390be0c240
+S
+#client/src/script/nav-template.html,b\4\b47be5c7fb22ad9c0558777299bc5b9845e8a179
+N
+client/src/script/VMFactory.js,0\e\0eefe3ecfb8b2382bccae9489bfe65541842973f
+I
+client/src/script/main.js,6\d\6d915771b96c67f6e10b89cd6220bb841cd2782b
+C
+src/HtmlRenderer.js,1\b\1b60f6ae940394f810907803685e5947fa64518c
+Q
+!client/src/script/knockoutView.js,9\3\93f404b616501417cba146ebe279d4f8e820b969
+E
+src/NavDataFactory.js,b\3\b3221c5b97d26e0458258dfdac5e3261a5d12f24

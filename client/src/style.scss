@@ -6,6 +6,38 @@
   padding: 0;
 }
 
+.header-title {
+  color: white;
+  display: block;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.header-title-block {
+  width: 100px;
+  height: 100px;
+  float: left;
+  background-color: #27749b;
+  margin-right: 5px;
+}
+
+header {
+  display: block;
+  width: 100%;
+  background-color: #214364;
+  padding: 10px;
+}
+
+header .logo {
+  float: right;
+}
+
+main {
+  width: 100%;
+  border-right: 1px solid black;
+}
+
 nav {
   max-width: 500px;
   min-width: 250px;
@@ -35,12 +67,24 @@ nav li:hover {
 
 nav a {
   display: block;
-  padding: 20px;
+  padding: 10px;
   font-weight: bold;
   text-decoration: none;
   color: white;
   word-break: break-all;
   cursor: pointer;
+}
+
+.nav-search-title {
+  color: white;
+}
+
+.nav-category,
+.nav-search-title,
+.nav-subcategory {
+  display: block;
+  font-size: 16px;
+  font-weight: bold;
 }
 
 .sub-category {

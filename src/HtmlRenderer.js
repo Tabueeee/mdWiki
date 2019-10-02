@@ -17,7 +17,7 @@ var HtmlRenderer = function () {
     var dataToLinkList = function dataToLinkList(data) {
         let html = '';
         for (let item of data) {
-            html += `<li><a href="${item.url}">${item.filePath}</a></li>`;
+            html += `<li><a href="${item.url}" data-bind="click: $root.changePage.bind($root, '${item.url}')">${item.filePath}</a></li>`;
         }
         return html;
     }

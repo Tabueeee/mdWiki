@@ -1,31 +1,8 @@
 # G:/dev/01_projects/mdWiki/client/src/script/knockoutView.js
 ```js
 const ko = require('knockout');
-const getRequestOptions = require('../../data/getRequestOptions.json');
 const navTemplate = require('./nav-template.html');
-
-let rejectPageChangePromise = () => undefined;
-
-function changePage(link) {
-    let contentElement = document.getElementById('content');
-
-    rejectPageChangePromise();
-    new Promise(async (resolve, reject) => {
-        try {
-            rejectPageChangePromise = reject;
-            let response = await fetch('http://127.0.0.1:3001' + link + "?content=1", getRequestOptions);
-
-            resolve(await response.text());
-        } catch (e) {
-            console.error(e);
-        }
-    }).then((text) => {
-        contentElement.innerHTML = text;
-        history.pushState({}, link.substr(link.lastIndexOf('/')), 'http://127.0.0.1:3001' + link);
-        window.hljs.initHighlighting.called = false;
-        window.hljs.initHighlighting();
-    }).catch(() => undefined);
-}
+const changePage = require('./pageChanger')().changePage;
 
 module.exports.registerElements = function (categories, data) {
     categories.forEach(function (category) {
@@ -59,6 +36,14 @@ module.exports.registerElements = function (categories, data) {
         }
     });
 
-    ko.applyBindings({changePage: changePage});
+    let showSpinner = ko.observable(false);
+
+    showSpinner.subscribe((newValue) => {
+        if (!newValue) {
+            ko.applyBindings({changePage: changePage.bind(null, true, showSpinner)}, document.getElementById('content-loaded'));
+        }
+    });
+
+    ko.applyBindings({changePage: changePage.bind(null, true, showSpinner), showSpinner: showSpinner});
 }
  ```

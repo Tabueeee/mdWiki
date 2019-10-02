@@ -17,12 +17,12 @@ var NavDataFactory = function (basePath) {
 
             if (restCategories.length === 0 && typeof category2 === 'string') {
                 restCategories = [category2];
-                category2 = '';
+                category2 = 'Loose';
             }
 
             if (typeof category2 !== 'string') {
                 restCategories = [category1];
-                category2 = '';
+                category2 = 'Loose';
                 category1 = 'Loose';
             }
 
@@ -30,7 +30,7 @@ var NavDataFactory = function (basePath) {
                 category: category1,
                 subcategory: (category2 || ''),
                 topic: restCategories.join('.').replace('.md', ''),
-                filePath: file.replace(/\\/g, '/'),
+                filePath: file,
                 url: '/' + file.replace(/\\/g, '/').replace('.md', '.html')
             };
             navItems.push(item);
