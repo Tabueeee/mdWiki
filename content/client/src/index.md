@@ -4,15 +4,16 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="de">
 
 <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
     <title>MD-Wiki</title>
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="description" content="Wiki">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="preload" href="/style.css" as="style">
+    <!--    <link rel="preload" href="/style.css" as="style">-->
+    <link rel="preload" href="/style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <link rel="preload" href="/bundle.js" as="script">
     <link rel="preload" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/highlight.min.js" as="script">
 
-    <link rel="preload" href="/style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript>
         <link rel="stylesheet" href="/style.css">
     </noscript>
@@ -49,7 +50,6 @@
             </div>
 
             <div class="ko-nav" data-bind="component: 'nav'">
-                <span>test!</span>
                 {{nav}}
             </div>
         </nav>
@@ -72,7 +72,7 @@
             script = document.createElement('script');
             script.src = '//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/highlight.min.js';
             script.setAttribute('defer', '');
-            script.setAttribute('onload', 'hljs.initHighlightingOnLoad();');
+            script.setAttribute('onload', 'window.hljs.initHighlighting();');
             document.body.appendChild(script);
         }, 0);
     });

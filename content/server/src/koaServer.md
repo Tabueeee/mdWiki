@@ -6,7 +6,7 @@ const path = require('path');
 const marked = require('marked');
 const compress = require('koa-compress');
 
-const basePath = path.resolve(__dirname + '/../content/') + '\\';
+const basePath = path.resolve(__dirname + '/../content/') + path.sep;
 
 const app = new Koa();
 const navDataFactory = new (require('./NavDataFactory'))(basePath);
@@ -16,7 +16,7 @@ app.use(compress({
     flush: require('zlib').Z_SYNC_FLUSH
 }));
 
-const js = fs.readFileSync(__dirname + '/../client/dist/bundle.js', 'utf8');
+const js = fs.readFileSync(__dirname + '/../client/dist/bundle.min.js', 'utf8');
 const style = fs.readFileSync(__dirname + '/../client/dist/style.css', 'utf8');
 const robots = fs.readFileSync(__dirname + '/../static/robots.txt', 'utf8');
 const favicon = fs.readFileSync(__dirname + '/../static/favicon.ico', 'utf8');
@@ -29,8 +29,8 @@ const assets = {
         type: 'application/javascript',
         body: (navigationData) => '(function(data, window){window.data = data;' + js + '})(' + JSON.stringify(navigationData) + ', window);'
     },
-    '/favicon.ico': {type: 'text/plain', body: () => favicon},
-    '/lorempixel.jpg': {type: 'text/plain', body: () => new Buffer(lorempixel)},
+    '/favicon.ico': {type: 'image/x-icon', body: () => favicon},
+    '/lorempixel.jpg': {type: 'image/jpeg', body: () => new Buffer(lorempixel)},
 };
 const htmlBaseTemplate = fs.readFileSync(__dirname + '/../client/dist/index.html', 'utf8');
 
@@ -67,4 +67,5 @@ app.use(async ctx => {
 });
 
 app.listen(3001);
+console.log('listening on: http://127.0.0.1:3001/index.html');
  ```
