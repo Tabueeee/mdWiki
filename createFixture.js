@@ -4,7 +4,7 @@ const fs = require('fs');
 
 (async () => {
 
-    let files = await glob(__dirname + '/client/src/**/*.+(js|html|scss)');
+    let files = await glob(__dirname + '/client/src/**/*.+(js|html|scss|ts)');
 
     for (let file of files) {
         writeFileFixture(file, 'client/', 'content/client/');

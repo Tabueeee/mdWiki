@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "bundle": "browserify -t [ stringify --extensions [.html] ] --debug src/script/main.js > dist/bundle.js",
+    "bundle": "browserify -t [ stringify --extensions [.html] ] -p [ tsify --project tsconfig.json ] --debug src/script/main.ts > dist/bundle.js",
     "preuglify": "npm run bundle",
     "uglify": "uglifyjs dist/bundle.js --compress --mangle > dist/bundle.min.js",
     "build-html": "./node_modules/.bin/html-minifier --collapse-whitespace -o ./dist/index.html ./src/index.html",
@@ -20,11 +20,15 @@
     "knockout": "^3.5.0"
   },
   "devDependencies": {
+    "@types/chart.js": "^2.8.7",
+    "@types/knockout": "^3.4.66",
     "clean-css": "^4.2.1",
     "html-minifier": "^4.0.0",
     "posthtml": "^0.11.6",
     "posthtml-inline-assets": "^3.0.0",
     "stringify": "^5.2.0",
+    "tsify": "^4.0.1",
+    "typescript": "^3.6.3",
     "uglify-es": "^3.3.9"
   }
 }

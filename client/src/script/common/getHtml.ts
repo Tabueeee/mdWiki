@@ -1,11 +1,13 @@
+// @ts-ignore injected by browserify
 const getRequestOptions = require('../../../data/getRequestOptions.json');
 
-module.exports = function (link) {
+
+export function htmlGet(link: string): { abortFetch: () => void, promise: Promise<{ text: string }> } {
     const controller = new AbortController();
     const signal = controller.signal;
-    let abortFetch;
+    let abortFetch: () => void = () => {throw new Error('unable to abort');};
 
-    let promise = new Promise(async (resolve, reject) => {
+    let promise: Promise<{ text: string }> = new Promise(async (resolve, reject) => {
         try {
             abortFetch = () => {
                 reject();
@@ -16,12 +18,12 @@ module.exports = function (link) {
             resolve({text});
         } catch (e) {
             // Ignore fetch aborts
-            if (e instanceof DOMException === false) {
+            if (!(e instanceof DOMException)) {
                 console.error(e);
                 reject(e);
             }
         }
-    })
+    });
 
     return {abortFetch, promise};
 }
