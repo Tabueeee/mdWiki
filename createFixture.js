@@ -7,13 +7,13 @@ const fs = require('fs');
     let files = await glob(__dirname + '/client/src/**/*.+(js|html|scss)');
 
     for (let file of files) {
-        writeFileFixture(file, 'client/', 'contentFixture2/client/');
+        writeFileFixture(file, 'client/', 'content/client/');
     }
 
     let serverFiles = await glob(__dirname + '/src/*');
 
     for (let file of serverFiles) {
-        writeFileFixture(file, 'src/', 'contentFixture2/server/src/');
+        writeFileFixture(file, 'src/', 'content/server/src/');
     }
 })();
 

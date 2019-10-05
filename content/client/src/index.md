@@ -10,6 +10,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="preload" href="/style.css" as="style">
     <link rel="preload" href="/bundle.js" as="script">
+    <link rel="preload" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/highlight.min.js" as="script">
+
+    <link rel="preload" href="/style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link rel="stylesheet" href="/style.css">
+    </noscript>
+    <script defer src="/bundle.js"></script>
 </head>
 
 <body>
@@ -19,14 +26,14 @@
         <div class="header-title-block"><span class="header-title">Mock 1</span></div>
         <div class="header-title-block"><span class="header-title">Mock 2</span></div>
         <div class="header-title-block"><span class="header-title">Mock 3</span></div>
-        <a class="logo" data-bind="click: $root.changePage.bind($root, '/index.html')">
+        <a class="logo" href="/index.html" data-bind="click: $root.changePage.bind($root, '/index.html')">
             <img src="/lorempixel.jpg" alt="logo">
         </a>
         <div style="clear: both"></div>
     </header>
     <div class="content-wrap">
         <nav>
-            <div data-bind="component: 'navSearch', visible: true" class="ko-search" style="display:none;">
+            <div data-bind="component: 'navSearch', visible: true" class="ko-navSearch" style="display:none;">
                 <div class="nav-search-content">
                     <label>
                         <span class="nav-search-title">File-Search</span>
@@ -35,19 +42,20 @@
                     <button type="button" data-bind="click: searchString.bind(null, '')">Clear</button>
                     <ul data-bind="foreach: filteredItems">
                         <li>
-                            <a data-bind="click: $root.changePage.bind($root, url), text: category+'/'+subcategory+'/'+topic"></a>
+                            <a data-bind="click: $root.changePage.bind($root, url), text: url.replace('.html', '')"></a>
                         </li>
                     </ul>
                 </div>
             </div>
 
             <div class="ko-nav" data-bind="component: 'nav'">
+                <span>test!</span>
                 {{nav}}
             </div>
         </nav>
         <main>
             <article>
-                <div data-bind="visible: $root.showSpinner" style="display: none;">
+                <div data-bind="visible: $root.isLoading" style="display: none;">
                     <div id="loading"><strong>loading...</strong><span></span></div>
                 </div>
                 <div id="content">
@@ -55,19 +63,10 @@
                 </div>
             </article>
         </main>
+
     </div>
 </div>
 <script>
-    var style = document.createElement('link');
-    style.rel = 'stylesheet';
-    style.setAttribute('href', '/style.css');
-    document.head.appendChild(style);
-
-    var script = document.createElement('script');
-    script.src = '/bundle.js';
-    script.setAttribute('defer', '');
-    document.body.appendChild(script);
-
     window.addEventListener('load', (event) => {
         setTimeout(function () {
             script = document.createElement('script');

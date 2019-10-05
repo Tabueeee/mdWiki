@@ -1,4 +1,15 @@
 # MD-WIKI
+
+## About
+- Project is mainly about an objective assertion of knockouts capability of a progressively enhanced web-app
+
+## Note:
+> Run lighthouse against non-code quoting pages in category Features/. The html code in body seems to mess with Lighthouse's algorithms.
+                                                
+## More Info
+- [Server](contentFixture2/Features/server.md)
+- [Client](contentFixture2/Features/client.md)
+
 ## RUN
 Start with CLI in project root:
 
