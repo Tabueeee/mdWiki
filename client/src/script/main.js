@@ -1,9 +1,9 @@
 const categoryVmFactory = require('./viewFactory/CategoriesVMFactory');
 const koView = require('./view/knockoutView');
 const chartData = require('../../data/mockedChartData');
-const categories = categoryVmFactory.createVm(window.data);
+const categories = categoryVmFactory.createVm(window.data || []);
 
-koView.registerElements(categories, window.data, chartData);
+koView.registerElements(categories, window.data || [], chartData);
 
 // simulate changing chartData
 let intervalIndex = 0;

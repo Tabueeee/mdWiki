@@ -9,12 +9,13 @@
     "preuglify": "npm run bundle",
     "uglify": "uglifyjs dist/bundle.js --compress --mangle > dist/bundle.min.js",
     "build-html": "./node_modules/.bin/html-minifier --collapse-whitespace -o ./dist/index.html ./src/index.html",
-    "build-css": "node task/cssmin.js",
-    "all": "npm run build-css && npm run build-html && npm run uglify"
+    "build-css": "node task/sass.js && node task/cssmin.js && node task/uncss.js",
+    "all": "npm run build-html && npm run uglify && npm run build-css"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "bulma": "^0.7.5",
     "chart.js": "^2.8.0",
     "highlight.js": "^9.15.10",
     "knockout": "^3.5.0"
@@ -22,9 +23,11 @@
   "devDependencies": {
     "clean-css": "^4.2.1",
     "html-minifier": "^4.0.0",
+    "node-sass": "^4.12.0",
     "posthtml": "^0.11.6",
     "posthtml-inline-assets": "^3.0.0",
     "stringify": "^5.2.0",
-    "uglify-es": "^3.3.9"
+    "uglify-es": "^3.3.9",
+    "uncss": "^0.17.2"
   }
 }

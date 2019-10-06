@@ -1,18 +1,13 @@
-<div>
+<div class="menu">
     <div data-bind="foreach: navItems">
-        <div class="category">
-            <span class="nav-category" data-bind="text: name"></span>
-            <div data-bind="foreach: entries">
-                <div class="sub-category">
-                    <span class="nav-subcategory"
-                          data-bind="text: name, click: $component.toggle.bind($component, $parent)"></span>
-                    <div data-bind="visible: !collapsed">
-                        <ul data-bind="foreach: items">
-                            <li><a data-bind="click: $root.changePage.bind($root, url), text: topic"></a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <p class="menu-label"  data-bind="text: name"></p>
+        <ul class="menu-list" data-bind="foreach: entries">
+            <li>
+                <a data-bind="text: name, click: $component.toggle.bind(null, $parent), class: !collapsed ? 'is-active' : ''">Manage Your Team</a>
+                <ul data-bind="visible: !collapsed, foreach: items">
+                    <li><a data-bind="click: $root.changePage.bind($root, url), text: topic"></a></li>
+                </ul>
+            </li>
+        </ul>
     </div>
 </div>
