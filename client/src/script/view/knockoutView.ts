@@ -1,5 +1,4 @@
 import {ChartHandler} from './handler/ChartHandler';
-import * as ko from 'knockout';
 import {Category, NavigationData, Subcategory} from '../interface/NavigationData';
 import {RawNavigationDataEntry} from '../interface/RawNavigationData';
 import {Nav} from './component/nav';
@@ -7,6 +6,7 @@ import {NavSearch} from './component/NavSearch';
 import {PageChanger} from '../common/pageChanger';
 import {ViewCategory} from '../interface/ViewCategory';
 import {BarChartDataSet} from '../interface/BarChartDataSet';
+import {applyBindings, bindingHandlers, components, observable, observableArray} from 'knockout';
 
 // @ts-ignore injected by browserify
 const chartOptions = require('../../../data/staticChartData.json');
@@ -18,27 +18,27 @@ export function registerElements(navigationData: NavigationData, data: Array<Raw
 
     // create ko-specific view-models
     let categories: Array<ViewCategory> = (<any>navigationData);
-    chartData.labels = ko.observableArray<string>(<string[]>chartData.labels);
-    chartData.datasets[0].data = ko.observableArray<number>(<number[]>chartData.datasets[0].data);
-    chartData.datasets[0].backgroundColor = ko.observableArray<string>(<string[]>chartData.datasets[0].backgroundColor);
-    chartData.datasets[0].borderColor = ko.observableArray<string>(<string[]>chartData.datasets[0].borderColor);
+    chartData.labels = observableArray<string>(<string[]>chartData.labels);
+    chartData.datasets[0].data = observableArray<number>(<number[]>chartData.datasets[0].data);
+    chartData.datasets[0].backgroundColor = observableArray<string>(<string[]>chartData.datasets[0].backgroundColor);
+    chartData.datasets[0].borderColor = observableArray<string>(<string[]>chartData.datasets[0].borderColor);
 
     navigationData.forEach(function (category: Category, index: number) {
-        categories[index].entries = ko.observableArray<Subcategory>(category.entries);
+        categories[index].entries = observableArray<Subcategory>(category.entries);
     });
 
     // register handlers
-    ko.bindingHandlers.chart = new ChartHandler();
+    bindingHandlers.chart = new ChartHandler();
 
     // register components
-    ko.components.register('navSearch', {
+    components.register('navSearch', {
         template: useDOMContentAsTemplate('nav-search'),
         viewModel: {instance: new NavSearch(data)}
     });
-    ko.components.register('nav', {template: navTemplate, viewModel: {instance: new Nav(categories)}});
+    components.register('nav', {template: navTemplate, viewModel: {instance: new Nav(categories)}});
 
     // global-scope
-    let isLoading = ko.observable(false);
+    let isLoading = observable(false);
     const pageChanger = new PageChanger(isLoading);
 
     const rootBindings = {
@@ -55,10 +55,10 @@ export function registerElements(navigationData: NavigationData, data: Array<Raw
     // update view on finished loading
     isLoading.subscribe((isLoading) => {
         if (!isLoading) {
-            ko.applyBindings(rootBindings, document.getElementById('content-loaded'));
+            applyBindings(rootBindings, document.getElementById('content-loaded'));
         }
     });
 
     // apply root bindings and all containing component/handler bindings
-    ko.applyBindings(rootBindings, document.body);
+    applyBindings(rootBindings, document.body);
 }
