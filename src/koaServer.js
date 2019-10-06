@@ -15,7 +15,7 @@ app.use(compress({
 }));
 
 const js = fs.readFileSync(__dirname + '/../client/dist/bundle.min.js', 'utf8');
-const style = fs.readFileSync(__dirname + '/../client/dist/style.css', 'utf8');
+const style = fs.readFileSync(__dirname + '/../client/dist/style.min.css', 'utf8');
 const robots = fs.readFileSync(__dirname + '/../static/robots.txt', 'utf8');
 const favicon = fs.readFileSync(__dirname + '/../static/favicon.ico', 'utf8');
 const lorempixel = fs.readFileSync(__dirname + '/../static/lorempixel.jpg');

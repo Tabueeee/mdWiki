@@ -19,30 +19,50 @@
 
 <body>
 <div class="ko-root">
-    <header>
-        <div class="header-title-block"><span class="header-title">MD-Wiki</span></div>
-        <div class="header-title-block"><span class="header-title">Mock 1</span></div>
-        <div class="header-title-block"><span class="header-title">Mock 2</span></div>
-        <div class="header-title-block"><span class="header-title">Mock 3</span></div>
-        <a class="logo" href="/index.html" data-bind="click: $root.changePage.bind($root, '/index.html')">
-            <img src="/lorempixel.jpg" alt="logo">
-        </a>
-        <div style="clear: both"></div>
+    <header class="navbar is-primary" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+            <a class="navbar-item" href="/index.html" data-bind="click: $root.changePage.bind(null, '/index.html')">
+                <img src="/lorempixel.jpg" alt="logo" width="112" height="28">
+            </a>
+
+            <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+            </a>
+        </div>
     </header>
-    <div class="content-wrap">
-        <nav>
+
+    <div class="content-wrap container columns">
+        <nav class="column column-left is-one-quarter-desktop is-one-third-tablet">
             <div data-bind="component: 'navSearch', visible: true" class="ko-navSearch" style="display:none;">
-                <div class="nav-search-content">
-                    <label>
-                        <span class="nav-search-title">File-Search</span>
-                        <input type="text" data-bind="textInput: searchString" placeholder="search something..." \>
-                    </label>
-                    <button type="button" data-bind="click: searchString.bind(null, '')">Clear</button>
-                    <ul data-bind="foreach: filteredItems">
-                        <li>
-                            <a data-bind="click: $root.changePage.bind($root, url), text: url.replace('.html', '')"></a>
-                        </li>
-                    </ul>
+                <div class="panel">
+                    <p class="panel-heading">
+                        File-Search
+                    </p>
+                    <div class="panel-block">
+                        <p class="control has-icons-left">
+                            <input class="input is-small" type="text" placeholder="search something..."
+                                   data-bind="textInput: searchString">
+                            <span class="icon is-small is-left">
+                            <i class="fas fa-search" aria-hidden="true"></i>
+                          </span>
+                        </p>
+                    </div>
+                    <div data-bind="foreach: filteredItems">
+                        <a class="panel-block is-active" data-bind="click: $root.changePage.bind($root, url)">
+                        <span class="panel-icon">
+                          <i class="fas fa-book" aria-hidden="true"></i>
+                        </span>
+                            <span data-bind="text: url.replace('.html', '')"></span>
+                        </a>
+                    </div>
+                    <div class="panel-block">
+                        <button class="button is-link is-outlined is-fullwidth"
+                                data-bind="click: searchString.bind(null, '')">
+                            reset all filters
+                        </button>
+                    </div>
                 </div>
             </div>
 
@@ -50,13 +70,20 @@
                 {{nav}}
             </div>
         </nav>
-        <main>
+        <main class="column">
             <article>
                 <div data-bind="visible: $root.isLoading" style="display: none;">
-                    <div id="loading"><strong>loading...</strong><span></span></div>
+                    <div class="container loading-container">
+                        <p class="loading-text" style="">
+                            Loading content...
+                        </p>
+                        <progress class="progress is-small is-primary" max="100">15%</progress>
+                    </div>
                 </div>
                 <div id="content">
-                    {{content}}
+                    <div class="content content-loaded">
+                        {{content}}
+                    </div>
                 </div>
             </article>
         </main>

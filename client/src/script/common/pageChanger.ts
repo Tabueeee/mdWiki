@@ -27,6 +27,7 @@ export class PageChanger {
             .then((result: { text: string }) => {
                 contentNode.innerHTML = result.text;
                 contentNode.setAttribute('id', 'content-loaded');
+                contentNode.setAttribute('class', 'content');
                 contentElement.appendChild(contentNode);
 
                 if (push) {
