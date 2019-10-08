@@ -33,7 +33,9 @@ const uncss = require('util').promisify(require('uncss'));
                 /.*progress.*/,
                 /\.menu.*/,
                 /\.navbar-item.*/,
-                'h1'
+                'h1',
+                '.is-fluid',
+                '*.box*'
             ]
         });
 

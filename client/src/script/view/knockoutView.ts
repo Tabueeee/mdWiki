@@ -10,8 +10,6 @@ import {applyBindings, bindingHandlers, components, observable, observableArray}
 
 // @ts-ignore injected by browserify
 const chartOptions = require('../../../data/staticChartData.json');
-// @ts-ignore injected by browserify
-const navTemplate = require('./component/nav-template.html');
 const useDOMContentAsTemplate = (className: string) => `<div class="${className}" data-bind="template: { nodes: $componentTemplateNodes, data: $component }"></div>`;
 
 export function registerElements(navigationData: NavigationData, data: Array<RawNavigationDataEntry>, chartData: BarChartDataSet) {
@@ -35,14 +33,19 @@ export function registerElements(navigationData: NavigationData, data: Array<Raw
         template: useDOMContentAsTemplate('nav-search'),
         viewModel: {instance: new NavSearch(data)}
     });
-    components.register('nav', {template: navTemplate, viewModel: {instance: new Nav(categories)}});
+    components.register('nav', {template: {element: 'nav-template'}, viewModel: {instance: new Nav(categories)}});
 
     // global-scope
     let isLoading = observable(false);
     const pageChanger = new PageChanger(isLoading);
+    const currentUrl = observable(window.location.pathname);
 
     const rootBindings = {
-        changePage: pageChanger.changePage.bind(pageChanger, true),
+        currentUrl: currentUrl,
+        changePage: (url: string) => {
+            currentUrl(url);
+            pageChanger.changePage(true, url);
+        },
         // add chart to global scope because lazy - probably better injected via data-attribute or ajax route
         chartFake1: {
             type: 'bar',
