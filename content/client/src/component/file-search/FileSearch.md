@@ -1,12 +1,12 @@
-# G:/dev/01_projects/mdWiki/client/src/script/view/component/NavSearch.ts
+# G:/dev/01_projects/mdWiki/client/src/component/file-search/FileSearch.ts
 ```js
-import * as ko from 'knockout';
-import {RawNavigationDataEntry} from '../../interface/RawNavigationData';
+import {computed, observable} from 'knockout';
+import {RawNavigationDataEntry} from '../../script/interface/RawNavigationData';
 
-export class NavSearch {
+export class FileSearch {
     private data: Array<RawNavigationDataEntry>;
-    public searchString = ko.observable('');
-    public filteredItems = ko.computed(function () {
+    public searchString = observable('');
+    public filteredItems = computed(function () {
         if (this.searchString() === '') {
             return [];
         }

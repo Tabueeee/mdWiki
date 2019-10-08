@@ -1,5 +1,10 @@
 @import "../node_modules/bulma/bulma";
 
+@import "component/**/*.scss";
+
+//@import "component/file-search/**/*.css";
+
+
 // no-flex-box-styles
 
 .column-left {

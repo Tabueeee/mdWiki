@@ -3,12 +3,12 @@ const fs = require('fs');
 const path = require('path');
 const marked = require('marked');
 const compress = require('koa-compress');
-
+const twig = require('twig');
+const renderTwigFile = require('util').promisify(twig.renderFile);
 const basePath = path.resolve(__dirname + '/../content/') + path.sep;
 
 const app = new Koa();
 const navDataFactory = new (require('./NavDataFactory'))(basePath);
-const htmlRenderer = new (require('./HtmlRenderer'))();
 
 app.use(compress({
     flush: require('zlib').Z_SYNC_FLUSH
@@ -30,7 +30,10 @@ const assets = {
     '/favicon.ico': {type: 'image/x-icon', body: () => favicon},
     '/lorempixel.jpg': {type: 'image/jpeg', body: () => new Buffer(lorempixel)},
 };
-const htmlBaseTemplate = fs.readFileSync(__dirname + '/../client/dist/index.html', 'utf8');
+
+const overViewTemplatePath = __dirname + '/../client/src/page/overview.twig';
+const overViewContentTemplatePath = __dirname + '/../client/src/page/overview-content.twig';
+const mdPageTemplatePath = __dirname + '/../client/src/page/md-page.twig';
 
 app.use(async ctx => {
     let navigationData = await navDataFactory.createNavData();
@@ -52,12 +55,16 @@ app.use(async ctx => {
     if (typeof matchingNavEntry !== 'undefined') {
         let pageContent = fs.readFileSync(basePath + (matchingNavEntry.filePath), 'utf8');
         pageHtmlContent = marked(pageContent);
-    } else {
-        pageHtmlContent = htmlRenderer.renderPageNav('{{nav}}', navigationData);
-    }
 
-    if (!ctx.request.querystring.includes('content=1')) {
-        pageHtmlContent = htmlRenderer.renderContent(htmlRenderer.renderPageNav(htmlBaseTemplate, navigationData), pageHtmlContent);
+        if (!ctx.request.querystring.includes('content=1')) {
+            pageHtmlContent = await renderTwigFile(mdPageTemplatePath, {navigationData, content: pageHtmlContent});
+        }
+    } else {
+        if (!ctx.request.querystring.includes('content=1')) {
+            pageHtmlContent = await renderTwigFile(overViewTemplatePath, {navigationData});
+        } else {
+            pageHtmlContent = await renderTwigFile(overViewContentTemplatePath, {navigationData});
+        }
     }
 
     ctx.type = 'text/html';

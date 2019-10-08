@@ -1,24 +1,24 @@
 const glob = require('util').promisify(require('glob'));
 // const path = require('path');
-const fs = require('fs');
+const fs = require('fs-extra');
 
 (async () => {
 
-    let files = await glob(__dirname + '/client/src/**/*.+(js|html|scss|ts)');
+    let files = await glob(__dirname + '/client/src/**/*.+(js|html|scss|ts|twig)');
 
     for (let file of files) {
-        writeFileFixture(file, 'client/', 'content/client/');
+        await writeFileFixture(file, 'client/', 'content/client/');
     }
 
     let serverFiles = await glob(__dirname + '/src/*');
 
     for (let file of serverFiles) {
-        writeFileFixture(file, 'src/', 'content/server/src/');
+        await writeFileFixture(file, 'src/', 'content/server/src/');
     }
 })();
 
 
-function writeFileFixture(filePath, replace, targetPath) {
+async function writeFileFixture(filePath, replace, targetPath) {
     let content = fs.readFileSync(filePath, 'utf8');
 
     content = '# ' + filePath + '\n```js\n' + content + ' ```';
@@ -28,5 +28,6 @@ function writeFileFixture(filePath, replace, targetPath) {
     path = path.replace(replace, targetPath);
 
     console.log('write to: ' + path);
+    await fs.ensureFile(path);
     fs.writeFileSync(path, content);
 }

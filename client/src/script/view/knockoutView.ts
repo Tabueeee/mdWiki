@@ -1,12 +1,12 @@
 import {ChartHandler} from './handler/ChartHandler';
 import {Category, NavigationData, Subcategory} from '../interface/NavigationData';
 import {RawNavigationDataEntry} from '../interface/RawNavigationData';
-import {Nav} from './component/nav';
-import {NavSearch} from './component/NavSearch';
 import {PageChanger} from '../common/pageChanger';
 import {ViewCategory} from '../interface/ViewCategory';
 import {BarChartDataSet} from '../interface/BarChartDataSet';
 import {applyBindings, bindingHandlers, components, observable, observableArray} from 'knockout';
+import {Menu} from '../../component/menu/Menu';
+import {FileSearch} from '../../component/file-search/FileSearch';
 
 // @ts-ignore injected by browserify
 const chartOptions = require('../../../data/staticChartData.json');
@@ -14,7 +14,7 @@ const useDOMContentAsTemplate = (className: string) => `<div class="${className}
 
 export function registerElements(navigationData: NavigationData, data: Array<RawNavigationDataEntry>, chartData: BarChartDataSet) {
 
-    // create ko-specific view-models
+    // create ko-specific view-models / make vm ko-specific
     let categories: Array<ViewCategory> = (<any>navigationData);
     chartData.labels = observableArray<string>(<string[]>chartData.labels);
     chartData.datasets[0].data = observableArray<number>(<number[]>chartData.datasets[0].data);
@@ -31,9 +31,9 @@ export function registerElements(navigationData: NavigationData, data: Array<Raw
     // register components
     components.register('navSearch', {
         template: useDOMContentAsTemplate('nav-search'),
-        viewModel: {instance: new NavSearch(data)}
+        viewModel: {instance: new FileSearch(data)}
     });
-    components.register('nav', {template: {element: 'nav-template'}, viewModel: {instance: new Nav(categories)}});
+    components.register('nav', {template: {element: 'nav-template'}, viewModel: {instance: new Menu(categories)}});
 
     // global-scope
     let isLoading = observable(false);

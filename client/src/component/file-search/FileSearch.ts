@@ -1,7 +1,7 @@
-import {RawNavigationDataEntry} from '../../interface/RawNavigationData';
 import {computed, observable} from 'knockout';
+import {RawNavigationDataEntry} from '../../script/interface/RawNavigationData';
 
-export class NavSearch {
+export class FileSearch {
     private data: Array<RawNavigationDataEntry>;
     public searchString = observable('');
     public filteredItems = computed(function () {

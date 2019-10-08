@@ -1,0 +1,20 @@
+# G:/dev/01_projects/mdWiki/client/src/page/overview.twig
+```js
+{% extends '../layout/layout-sidebar.twig' %}
+
+{% block mainContent %}
+    <div data-bind="visible: $root.isLoading" style="display: none;">
+        <div class="container loading-container">
+            <p class="loading-text" style="">
+                Loading content...
+            </p>
+            <progress class="progress is-small is-primary" max="100">15%</progress>
+        </div>
+    </div>
+    <div id="content">
+        <div class="content content-loaded">
+            {% include 'overview-content.twig' %}
+        </div>
+    </div>
+{% endblock mainContent %}
+ ```

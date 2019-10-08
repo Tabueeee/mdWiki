@@ -7,7 +7,7 @@ import {registerElements} from './view/knockoutView';
 import {BarChartDataSet} from './interface/BarChartDataSet';
 // @ts-ignore injected by browserify
 const chartData: BarChartDataSet = require('../../data/mockedChartData.json');
-const rawNavigationData: Array<RawNavigationDataEntry> = window.data;
+const rawNavigationData: Array<RawNavigationDataEntry> = window.data || [];
 const navigationData: NavigationData = new CategoriesVMFactory().createVm(rawNavigationData);
 
 registerElements(navigationData, rawNavigationData, chartData);

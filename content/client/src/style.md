@@ -1,160 +1,60 @@
 # G:/dev/01_projects/mdWiki/client/src/style.scss
 ```js
-.content-wrap {
-  display: flex;
-}
+@import "../node_modules/bulma/bulma";
 
-.ko-nav ul {
-  padding: 0;
-}
+@import "component/**/*.scss";
 
-.header-title {
-  color: white;
-  display: block;
-  font-size: 16px;
-  font-weight: bold;
-  text-align: center;
-}
+//@import "component/file-search/**/*.css";
 
-.header-title-block {
-  width: 100px;
-  height: 100px;
+
+// no-flex-box-styles
+
+.column-left {
   float: left;
-  background-color: #27749b;
-  margin-right: 5px;
+
+  @media (max-width: 769px) {
+    float: none;
+  }
 }
 
-header {
-  display: block;
+.navbar-item {
+  @media (max-width: 769px) {
+    float: left;
+  }
+}
+
+// end no-flex-box-styles
+
+.loading-container {
+  margin-top: 150px;
+}
+
+.loading-text {
+  text-align: center;
   width: 100%;
-  background-color: #214364;
-  padding: 10px;
 }
 
-header .logo {
-  float: right;
+.content-wrap {
+  padding: 15px;
+  max-width: unset;
 }
 
 main {
-  width: 100%;
-  border-right: 1px solid black;
+  overflow: auto;
 }
 
-nav {
-  max-width: 500px;
-  min-width: 250px;
-}
-
-#content {
-  flex-grow: 1;
-  padding: 0 20px;
-}
-
-* {
-  box-sizing: border-box;
-}
-
-nav li {
-  list-style: none;
-  background-color: #27749b;
-  transition: background-color .33s;
-  border-bottom: 1px solid #27749b;
-}
-
-nav li:hover {
-  background-color: #214364;
-  border-bottom: 1px solid white;
+.ko-nav {
+  margin-top: 15px;
 }
 
 
-nav a {
-  display: block;
-  padding: 10px;
-  font-weight: bold;
-  text-decoration: none;
-  color: white;
-  word-break: break-all;
-  cursor: pointer;
-}
-
-.nav-search-title {
-  color: white;
-}
-
-.nav-category,
-.nav-search-title,
-.nav-subcategory {
-  display: block;
-  font-size: 16px;
-  font-weight: bold;
-}
-
-.sub-category {
-  background-color: #214364;
-  color: white;
-  cursor: pointer;
-  margin-top: 0.25em;
-  padding: 10px;
-}
-
-.sub-category h2 {
-  margin: 0;
-  word-break: break-all;
-}
-
-.category {
-  background-color: #f0f0f0;
-  padding: 10px;
-}
-
-.nav-search {
-  background-color: #f0f0f0;
-  padding: 10px;
-}
-
-.nav-search-content {
-  padding: 20px;
-  background-color: #214364;
-}
-
-button {
-  background-color: #27749b;
-  border: none;
-  padding: 10px;
-  color: white;
-  transition: border .33s;
-  border-bottom: 1px solid #27749b;
-  cursor: pointer;
-}
-
-button:hover {
-  border-bottom: 1px solid white;
-}
-
-input[type="text"] {
-  padding: 10px;
-}
-
-.nav-search-content input {
-  width: 70%;
-  height: 40px;
-}
-
-.nav-search-content button {
-  width: 27%;
-  height: 40px;
-}
-
-.nav-search ul {
-  padding: 0;
-}
-
-/*
-
-Google Code style (c) Aahan Krish <geekpanth3r@gmail.com>
-
-*/
-
+//
+///*
+//
+//Google Code style (c) Aahan Krish <geekpanth3r@gmail.com>
+//
+//*/
+//
 .hljs {
   display: block;
   overflow-x: auto;
@@ -238,4 +138,5 @@ Google Code style (c) Aahan Krish <geekpanth3r@gmail.com>
 .hljs-emphasis {
   font-style: italic;
 }
+
  ```
