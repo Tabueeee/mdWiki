@@ -5,8 +5,8 @@ import {PageChanger} from '../common/pageChanger';
 import {ViewCategory} from '../interface/ViewCategory';
 import {BarChartDataSet} from '../interface/BarChartDataSet';
 import {applyBindings, bindingHandlers, components, observable, observableArray} from 'knockout';
-import {Menu} from '../../component/menu/Menu';
 import {FileSearch} from '../../component/file-search/FileSearch';
+import {NavMenu} from '../../component/nav-menu/NavMenu';
 
 // @ts-ignore injected by browserify
 const chartOptions = require('../../../data/staticChartData.json');
@@ -29,11 +29,11 @@ export function registerElements(navigationData: NavigationData, data: Array<Raw
     bindingHandlers.chart = new ChartHandler();
 
     // register components
-    components.register('navSearch', {
-        template: useDOMContentAsTemplate('nav-search'),
+    components.register('file-search', {
+        template: useDOMContentAsTemplate('file-search'),
         viewModel: {instance: new FileSearch(data)}
     });
-    components.register('nav', {template: {element: 'nav-template'}, viewModel: {instance: new Menu(categories)}});
+    components.register('nav-menu', {template: {element: 'nav-menu-template'}, viewModel: {instance: new NavMenu(categories)}});
 
     // global-scope
     let isLoading = observable(false);

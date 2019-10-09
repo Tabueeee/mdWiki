@@ -29,6 +29,7 @@
     "posthtml-inline-assets": "^3.0.0",
     "stringify": "^5.2.0",
     "tsify": "^4.0.1",
+    "twig": "^1.13.3",
     "typescript": "^3.6.3",
     "uglify-es": "^3.3.9",
     "uncss": "^0.17.2"

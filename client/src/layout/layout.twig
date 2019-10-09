@@ -16,8 +16,8 @@
     </noscript>
     <script defer src="/bundle.js"></script>
 
-    <template id="nav-template">
-        {% include '../component/menu/menu-template.html' %}
+    <template id="nav-menu-template">
+        {% include '../component/nav-menu/menu-template.html' %}
     </template>
 </head>
 
@@ -26,9 +26,36 @@
     <header class="navbar is-primary" role="navigation" aria-label="main navigation">
         {% include '../component/header/header-template.html' %}
     </header>
+    <div class="content-wrap container columns">
+        <nav class="column column-left is-one-quarter-desktop is-one-third-tablet">
+            <file-search data-bind="visible: true" style="display:none;">
+                {% include '../component/file-search/file-search-template.html' %}
+            </file-search>
 
-    {% block pageContent %}
-    {% endblock pageContent %}
+            <nav-menu>
+                {% include '../component/nav-menu/menu-template-basic.twig' with {navigationData: navigationData} only %}
+            </nav-menu>
+        </nav>
+
+        <main class="column">
+            <div data-bind="visible: $root.isLoading" style="display: none;">
+                <div class="container loading-container">
+                    <p class="loading-text" style="">
+                        Loading content...
+                    </p>
+                    <progress class="progress is-small is-primary" max="100">15%</progress>
+                </div>
+            </div>
+            <article>
+                <div id="content">
+                    <div class="content content-loaded">
+                        {% block mainContent %}
+                        {% endblock mainContent %}
+                    </div>
+                </div>
+            </article>
+        </main>
+    </div>
 </div>
 <script>
     window.addEventListener('load', (event) => {

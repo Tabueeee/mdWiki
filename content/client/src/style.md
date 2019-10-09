@@ -43,7 +43,7 @@ main {
   overflow: auto;
 }
 
-.ko-nav {
+.nav-menu {
   margin-top: 15px;
 }
 

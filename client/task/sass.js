@@ -9,7 +9,7 @@ const globImporter = require('node-sass-glob-importer');
             importer: globImporter(),
             file: path.resolve(__dirname, '..', 'src/style.scss'),
         });
-        fs.writeFileSync(path.resolve(__dirname, '..', 'src/style.css'), result.css.toString());
+        fs.writeFileSync(path.resolve(__dirname, '..', 'dist/style.css'), result.css.toString());
     } catch (err) {
         console.error(err);
     }

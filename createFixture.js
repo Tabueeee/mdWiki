@@ -3,6 +3,8 @@ const glob = require('util').promisify(require('glob'));
 const fs = require('fs-extra');
 
 (async () => {
+    fs.emptyDirSync(__dirname + '/content/client/');
+    fs.emptyDirSync(__dirname + '/content/server/');
 
     let files = await glob(__dirname + '/client/src/**/*.+(js|html|scss|ts|twig)');
 

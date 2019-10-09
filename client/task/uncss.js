@@ -1,10 +1,20 @@
 const fs = require('fs');
 const path = require('path');
 const uncss = require('util').promisify(require('uncss'));
+const twig = require('twig');
+const renderTwigFile = require('util').promisify(twig.renderFile);
 
 (async () => {
+    let result = await renderTwigFile(__dirname + '/../src/page/md-page.twig', {content: 'empty', navigationData: []});
+    fs.writeFileSync(path.resolve(__dirname, '../dist/', 'md-page.html'), result);
+
+    let result2 = await renderTwigFile(__dirname + '/../src/page/overview.twig', {content: 'empty', navigationData: []});
+    fs.writeFileSync(path.resolve(__dirname, '../dist/', 'overview.html'), result2);
+
+
     const files = [
-        'dist/index.html'
+        'dist/md-page.html',
+        'dist/overview.html',
     ];
 
     try {
@@ -36,7 +46,8 @@ const uncss = require('util').promisify(require('uncss'));
                 'h1',
                 '.is-fluid',
                 '*.box*',
-                /.*nav-search.*/
+                /.*file-search.*/,
+                /.*nav-menu.*/
             ]
         });
 
@@ -45,3 +56,4 @@ const uncss = require('util').promisify(require('uncss'));
         console.error(err);
     }
 })();
+

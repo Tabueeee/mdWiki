@@ -34,7 +34,7 @@ const assets = {
 };
 
 const overViewTemplatePath = __dirname + '/../client/src/page/overview.twig';
-const overViewContentTemplatePath = __dirname + '/../client/src/page/overview-content.twig';
+const overViewContentTemplatePath = __dirname + '/../client/src/static-content/overview-content.twig';
 const mdPageTemplatePath = __dirname + '/../client/src/page/md-page.twig';
 
 app.use(async ctx => {

@@ -2,7 +2,7 @@ import {observableArray, ObservableArray} from 'knockout';
 import {ViewCategory} from '../../script/interface/ViewCategory';
 import {Subcategory} from '../../script/interface/NavigationData';
 
-export class Menu {
+export class NavMenu {
     public navItems: ObservableArray<ViewCategory>;
 
     public constructor(categories: Array<ViewCategory>) {
