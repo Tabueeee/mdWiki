@@ -1,4 +1,4 @@
-const fs = require('fs');
+const fs = require('fs-extra');
 const path = require('path');
 const uncss = require('util').promisify(require('uncss'));
 const twig = require('twig');
@@ -8,9 +8,13 @@ const renderTwigFile = require('util').promisify(twig.renderFile);
     let result = await renderTwigFile(__dirname + '/../src/page/md-page.twig', {content: 'empty', navigationData: []});
     fs.writeFileSync(path.resolve(__dirname, '../dist/', 'md-page.html'), result);
 
-    let result2 = await renderTwigFile(__dirname + '/../src/page/overview.twig', {content: 'empty', navigationData: []});
+    let result2 = await renderTwigFile(__dirname + '/../src/page/overview.twig', {
+        content: 'empty',
+        navigationData: []
+    });
     fs.writeFileSync(path.resolve(__dirname, '../dist/', 'overview.html'), result2);
 
+    fs.ensureFileSync(path.resolve(__dirname, '../dist/', 'cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.bundle.min.js'));
 
     const files = [
         'dist/md-page.html',

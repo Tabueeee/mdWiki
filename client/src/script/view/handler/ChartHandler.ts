@@ -1,18 +1,36 @@
-import Chart = require('chart.js');
-import {AllBindings, BindingHandler, toJS} from 'knockout';
+import {BindingHandler, toJS} from 'knockout';
 
 export class ChartHandler implements BindingHandler {
-    public init(element: any, valueAccessor: () => any, _allBindings: AllBindings, viewModel: any) {
-        // init / load chart.js on demand to reduce stress on FMP - optimally lazy load here
-        // @ts-ignore injected by browserify
-        let ctx = element.getContext('2d');
-        // passes the object in the active context (here: root view model) with key = passed from binding
-        // with: data-bind="chart: 'key'"
-        element.chart = new Chart(ctx, toJS(viewModel[valueAccessor()]));
+    private ChartResolvedPromise: Promise<any>;
+
+    public constructor(ChartResolvedPromise: Promise<any>) {
+        this.ChartResolvedPromise = ChartResolvedPromise;
     }
 
-    public update(element: any, valueAccessor: () => any, _allBindings: AllBindings, viewModel: any) {
-        element.chart.data = (Object.assign(element.chart.data, toJS(viewModel[valueAccessor()])).data);
+    public init(element: any, valueAccessor: () => any) {
+        // fake active chart for knockout to make it'S binding connection
+        element.chart = {data: (Object.assign({}, toJS(valueAccessor())).data), update: () => undefined};
+
+        // lazy load chart.js to reduce stress on FMP
+        this.ChartResolvedPromise
+            .then((Chart: any) => {
+                let ctx = element.getContext('2d');
+                // 'valueAccessor()' accesses the passed object-key referencing the active context (here: root view model)
+                element.chart = new Chart(ctx, toJS(valueAccessor()));
+                element.chart.data = (Object.assign(element.chart.data, toJS(valueAccessor())).data);
+                element.chart.update();
+            });
+    }
+
+    public update(element: any, valueAccessor: () => any) {
+        element.chart.data = (Object.assign(element.chart.data, toJS(valueAccessor())).data);
         element.chart.update();
+    }
+
+    public createHandler() {
+        return {
+            init: this.init.bind(this),
+            update: this.update.bind(this)
+        };
     }
 }

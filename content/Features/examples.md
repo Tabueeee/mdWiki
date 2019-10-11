@@ -1,4 +1,4 @@
-<canvas data-bind="chart: 'chartFake1'" class="weather-chart" width="400" height="400"></canvas>
+<canvas data-bind="chart: chartFake1" class="weather-chart" width="400" height="400"></canvas>
 
 ---
 
@@ -29,4 +29,4 @@ At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergr
 
 ---
 
-<canvas data-bind="chart: 'chartFake1'" class="weather-chart" width="400" height="400"></canvas>
+  <canvas data-bind="chart: chartFake1" class="weather-chart" width="400" height="400"></canvas>
