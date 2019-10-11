@@ -9,6 +9,7 @@ import {BarChartDataSet} from '../interface/BarChartDataSet';
 import {applyBindings, bindingHandlers, components, observable, observableArray} from 'knockout';
 import {FileSearch} from '../../component/file-search/FileSearch';
 import {NavMenu} from '../../component/nav-menu/NavMenu';
+import {getScript} from '../common/getScript';
 
 // @ts-ignore injected by browserify
 const chartOptions = require('../../../data/staticChartData.json');
@@ -28,7 +29,8 @@ export function registerElements(navigationData: NavigationData, data: Array<Raw
     });
 
     // register handlers
-    bindingHandlers.chart = new ChartHandler();
+    let chartJSLoadedPromise = getScript('//cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.bundle.min.js', 'Chart');
+    bindingHandlers.chart = new ChartHandler(chartJSLoadedPromise).createHandler();
 
     // register components
     components.register('file-search', {

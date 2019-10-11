@@ -16,6 +16,8 @@ registerElements(navigationData, rawNavigationData, chartData);
 let intervalIndex = 0;
 setInterval(() => {
     if (document.body.querySelector('canvas')) {
+        console.log('creating new entry: NEW_' + (intervalIndex + 1));
+        console.log(chartData);
         chartData.labels.push('NEW_' + intervalIndex ++);
         chartData.datasets[0].data.push(Math.floor(Math.random() * 100));
         chartData.datasets[0].backgroundColor.push(

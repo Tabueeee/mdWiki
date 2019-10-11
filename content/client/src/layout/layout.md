@@ -62,7 +62,7 @@
 <script>
     window.addEventListener('load', (event) => {
         setTimeout(function () {
-            script = document.createElement('script');
+            var script = document.createElement('script');
             script.src = '//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/highlight.min.js';
             script.setAttribute('defer', '');
             script.setAttribute('onload', 'window.hljs.initHighlighting();');
