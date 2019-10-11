@@ -15,6 +15,7 @@ const renderTwigFile = require('util').promisify(twig.renderFile);
     fs.writeFileSync(path.resolve(__dirname, '../dist/', 'overview.html'), result2);
 
     fs.ensureFileSync(path.resolve(__dirname, '../dist/', 'cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.bundle.min.js'));
+    fs.ensureFileSync(path.resolve(__dirname, '../dist/', 'cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/highlight.min.js'));
 
     const files = [
         'dist/md-page.html',

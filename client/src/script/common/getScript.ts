@@ -1,5 +1,4 @@
-
-export function getScript(link: string, key: string) {
+export function getScript<T>(link: string, key: string): Promise<T> {
     let scriptElement = document.createElement('script');
     scriptElement.src = link;
     scriptElement.setAttribute('defer', '');

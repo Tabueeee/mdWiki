@@ -1,14 +1,12 @@
-import {ObservableArray} from 'knockout';
-
 export interface BarChartDataSet {
-    'labels': Array<string> | ObservableArray<string>,
+    'labels': Array<string>,
     'datasets': Array<BarChartDataSetEntry>
 }
 
-interface BarChartDataSetEntry {
+export interface BarChartDataSetEntry {
     'label': string;
-    'data': Array<number> | ObservableArray<number>;
-    'backgroundColor': Array<string> | ObservableArray<string>;
-    'borderColor': Array<string> | ObservableArray<string>;
+    'data': Array<number>;
+    'backgroundColor': Array<string>;
+    'borderColor': Array<string>;
     'borderWidth': number;
 }

@@ -40,14 +40,7 @@
         </nav>
 
         <main class="column">
-            <div data-bind="visible: $root.isLoading" style="display: none;">
-                <div class="container loading-container">
-                    <p class="loading-text" style="">
-                        Loading content...
-                    </p>
-                    <progress class="progress is-small is-primary" max="100">15%</progress>
-                </div>
-            </div>
+            {% include '../component/loading-indicator/loading-indicator-template.html' %}
             <article>
                 <div id="content">
                     <div class="content content-loaded">
@@ -59,18 +52,6 @@
         </main>
     </div>
 </div>
-<script>
-    window.addEventListener('load', (event) => {
-        setTimeout(function () {
-            var script = document.createElement('script');
-            script.src = '//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/highlight.min.js';
-            script.setAttribute('defer', '');
-            script.setAttribute('onload', 'window.hljs.initHighlighting();');
-            document.body.appendChild(script);
-        }, 0);
-    });
-</script>
-
 </body>
 </html>
  ```

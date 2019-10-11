@@ -1,4 +1,4 @@
-export interface RawNavigationDataEntry {
+export interface FlatNavigationEntry {
     category: string;
     subcategory: string;
     topic: string;

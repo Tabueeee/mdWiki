@@ -1,8 +1,8 @@
 import {computed, observable} from 'knockout';
-import {RawNavigationDataEntry} from '../../script/interface/RawNavigationData';
+import {FlatNavigationEntry} from '../../script/interface/FlatNavigationEntry';
 
 export class FileSearch {
-    private data: Array<RawNavigationDataEntry>;
+    private data: Array<FlatNavigationEntry>;
     public searchString = observable('');
     public filteredItems = computed(() => {
         if (this.searchString() === '') {
@@ -12,7 +12,7 @@ export class FileSearch {
         return this.data.filter((item) => (item.url.toLowerCase()).includes((this.searchString().toLocaleLowerCase())));
     });
 
-    public constructor(data: Array<RawNavigationDataEntry>) {
+    public constructor(data: Array<FlatNavigationEntry>) {
         this.data = data;
     }
 }

@@ -1,7 +1,6 @@
 # G:/dev/01_projects/mdWiki/client/src/script/common/getScript.ts
 ```js
-
-export function getScript(link: string, key: string) {
+export function getScript<T>(link: string, key: string): Promise<T> {
     let scriptElement = document.createElement('script');
     scriptElement.src = link;
     scriptElement.setAttribute('defer', '');

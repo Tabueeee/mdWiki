@@ -2,15 +2,48 @@
 ```js
 import {CategoriesVMFactory} from './viewFactory/CategoriesVMFactory';
 import {NavigationData} from './interface/NavigationData';
-import {RawNavigationDataEntry} from './interface/RawNavigationData';
-import {registerElements} from './view/knockoutView';
+import {FlatNavigationEntryList} from './interface/FlatNavigationEntryList';
+import {KnockoutView} from './view/knockoutView';
 import {BarChartDataSet} from './interface/BarChartDataSet';
+import {PageChanger} from './common/PageChanger';
+import {getScript} from './common/getScript';
+// not injected by browserify - loaded lazily
+import * as hljs from 'highlight.js';
+// not injected by browserify - loaded lazily
+import Chart = require('chart.js');
 // @ts-ignore injected by browserify
 const chartData: BarChartDataSet = require('../../data/mockedChartData.json');
-const rawNavigationData: Array<RawNavigationDataEntry> = window.data || [];
+const rawNavigationData: Array<FlatNavigationEntryList> = window.data || [];
 const navigationData: NavigationData = new CategoriesVMFactory().createVm(rawNavigationData);
+// @ts-ignore injected by browserify
+const getRequestOptions = require('../../data/getRequestOptions.json');
 
-registerElements(navigationData, rawNavigationData, chartData);
+const httpHelper: HttpHelper = new HttpHelper(getRequestOptions);
+const pageChanger: PageChanger = new PageChanger(httpHelper);
+
+// Lazily load 3rd Party Scripts
+let chartJSLoadedPromise: Promise<Chart> = getScript<Chart>('//cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.bundle.min.js', 'Chart');
+let highlightJSLoadedPromise: Promise<typeof hljs> = getScript<typeof hljs>(
+    '//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/highlight.min.js',
+    'hljs'
+);
+highlightJSLoadedPromise
+    .then(function (hl: typeof hljs) {
+        hl.initHighlighting();
+        // refresh hljs on page load
+        pageChanger.subscribeLoadingStateChange((loadingState: boolean) => {
+            if (!loadingState) {
+                // undocumented property
+                (<any>hl.initHighlighting).called = false;
+                hl.initHighlighting();
+            }
+        });
+    });
+
+
+let koView: KnockoutView = new KnockoutView(pageChanger, chartJSLoadedPromise);
+koView.registerElements(navigationData, rawNavigationData, chartData);
+
 
 // simulate changing chartData
 let intervalIndex = 0;

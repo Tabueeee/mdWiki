@@ -1,21 +1,32 @@
-import {NavigationData} from '../interface/NavigationData';
-import {RawNavigationDataEntry} from '../interface/RawNavigationData';
+import {FlatNavigationEntry} from '../interface/FlatNavigationEntry';
+import {observable, observableArray} from 'knockout';
+import {Subcategory, ViewCategory} from '../view/interface/ViewCategory';
+import {BarChartDataSet} from '../interface/BarChartDataSet';
+import {ViewBarChartDataSet} from '../view/interface/ViewBarChart';
 
 export class CategoriesVMFactory {
-    public createVm(data: Array<RawNavigationDataEntry>): NavigationData {
-        const categoryMap = this.mapByProp<RawNavigationDataEntry>(data, 'category');
+    public createVm(flatNavigationEntries: Array<FlatNavigationEntry>, barChartDataSet: BarChartDataSet) {
+        return {
+            flatNavigationEntries,
+            categories: this.createViewCategories(flatNavigationEntries),
+            barChartView: this.createBarChartVm(barChartDataSet)
+        };
+    }
 
-        let categories: NavigationData = [];
+    private createViewCategories(flatNavigationEntries: Array<FlatNavigationEntry>): Array<ViewCategory> {
+        const categoryMap = this.mapByProp<FlatNavigationEntry>(flatNavigationEntries, 'category');
+
+        let categories: Array<ViewCategory> = [];
         for (let key in categoryMap) {
             const subCategoryMap = this.mapByProp(categoryMap[key], 'subcategory');
 
-            let subCategories = [];
+            let subCategories: Array<Subcategory> = [];
             for (let subCategoryKey in subCategoryMap) {
-                let subCategoryItem = {name: subCategoryKey, items: subCategoryMap[subCategoryKey], collapsed: true};
+                let subCategoryItem = {name: subCategoryKey, items: subCategoryMap[subCategoryKey], collapsed: observable(true)};
                 subCategories.push(subCategoryItem);
             }
 
-            categories.push({name: key, entries: subCategories});
+            categories.push({name: key, entries: observableArray(subCategories)});
         }
 
         return categories;
@@ -30,4 +41,18 @@ export class CategoriesVMFactory {
             return groups;
         }, {});
     };
+
+    private createBarChartVm(barChartDataSet: BarChartDataSet): ViewBarChartDataSet {
+        return {
+            labels: observableArray<string>(barChartDataSet.labels),
+            datasets: [
+                Object.assign({}, barChartDataSet.datasets[0], {
+                    data: observableArray<number>(barChartDataSet.datasets[0].data),
+                    backgroundColor: observableArray<string>(barChartDataSet.datasets[0].backgroundColor),
+                    borderColor: observableArray<string>(barChartDataSet.datasets[0].borderColor)
+                })
+            ]
+        };
+    }
+
 }

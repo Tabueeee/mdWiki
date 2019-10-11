@@ -1,11 +1,11 @@
 # G:/dev/01_projects/mdWiki/client/src/script/viewFactory/CategoriesVMFactory.ts
 ```js
 import {NavigationData} from '../interface/NavigationData';
-import {RawNavigationDataEntry} from '../interface/RawNavigationData';
+import {FlatNavigationEntryList} from '../interface/FlatNavigationEntryList';
 
 export class CategoriesVMFactory {
-    public createVm(data: Array<RawNavigationDataEntry>): NavigationData {
-        const categoryMap = this.mapByProp<RawNavigationDataEntry>(data, 'category');
+    public createVm(data: Array<FlatNavigationEntryList>): NavigationData {
+        const categoryMap = this.mapByProp<FlatNavigationEntryList>(data, 'category');
 
         let categories: NavigationData = [];
         for (let key in categoryMap) {

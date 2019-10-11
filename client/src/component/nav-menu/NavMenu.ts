@@ -1,6 +1,5 @@
 import {observableArray, ObservableArray} from 'knockout';
-import {ViewCategory} from '../../script/interface/ViewCategory';
-import {Subcategory} from '../../script/interface/NavigationData';
+import {Subcategory, ViewCategory} from '../../script/view/interface/ViewCategory';
 
 export class NavMenu {
     public navItems: ObservableArray<ViewCategory>;
