@@ -1,4 +1,4 @@
-import {ObservableArray} from 'knockout';
+import {Observable, ObservableArray} from 'knockout';
 
 export interface ViewBarChartDataSet {
     'labels': ObservableArray<string>,
@@ -6,9 +6,9 @@ export interface ViewBarChartDataSet {
 }
 
 interface ViewBarChartDataSetEntry {
-    'label': string;
+    'label': Observable<string>;
     'data': ObservableArray<number>;
     'backgroundColor': ObservableArray<string>;
     'borderColor': ObservableArray<string>;
-    'borderWidth': number;
+    'borderWidth': Observable<number>;
 }

@@ -1,5 +1,7 @@
 # G:/dev/01_projects/mdWiki/client/src/script/common/PageChanger.ts
 ```js
+import {HttpHelper} from './HttpHelper';
+
 export class PageChanger {
 
     private loadingStateChangeSubscribers: Array<(loadingState: boolean) => void> = [];

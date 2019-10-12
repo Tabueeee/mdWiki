@@ -438,7 +438,37 @@
             </PaintGroupHighlightMap>
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/client/src/component/header/header-styles.scss">
+          <value>
+            <PaintGroupHighlightMap>
+              <option name="paintGroups">
+                <map>
+                  <entry key="0">
+                    <value>
+                      <EditorHighlightsForPaintGroup />
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </PaintGroupHighlightMap>
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/client/src/component/header/header-template.html">
+          <value>
+            <PaintGroupHighlightMap>
+              <option name="paintGroups">
+                <map>
+                  <entry key="0">
+                    <value>
+                      <EditorHighlightsForPaintGroup />
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </PaintGroupHighlightMap>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/client/src/component/loading-indicator/loading-indicator-styles.scss">
           <value>
             <PaintGroupHighlightMap>
               <option name="paintGroups">
@@ -544,6 +574,21 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/client/src/component/nav-menu/menu-template.html">
+          <value>
+            <PaintGroupHighlightMap>
+              <option name="paintGroups">
+                <map>
+                  <entry key="0">
+                    <value>
+                      <EditorHighlightsForPaintGroup />
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </PaintGroupHighlightMap>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/client/src/component/nav-menu/nav-menu-styles.scss">
           <value>
             <PaintGroupHighlightMap>
               <option name="paintGroups">
@@ -1024,6 +1069,21 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/client/src/script/pageChanger.js">
+          <value>
+            <PaintGroupHighlightMap>
+              <option name="paintGroups">
+                <map>
+                  <entry key="0">
+                    <value>
+                      <EditorHighlightsForPaintGroup />
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </PaintGroupHighlightMap>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/client/src/script/view/ViewModelFactory.ts">
           <value>
             <PaintGroupHighlightMap>
               <option name="paintGroups">

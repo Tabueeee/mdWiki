@@ -1,6 +1,5 @@
 # G:/dev/01_projects/mdWiki/client/src/component/file-search/file-search-template.html
 ```js
-<h1>test</h1>
 <div class="panel">
     <p class="panel-heading">File-Search</p>
 

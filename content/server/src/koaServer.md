@@ -9,6 +9,10 @@ const twig = require('twig');
 const renderTwigFile = require('util').promisify(twig.renderFile);
 const basePath = path.resolve(__dirname + '/../content/') + path.sep;
 
+if (!process.argv.includes('--v')) {
+    console.log = () => undefined;
+}
+
 const app = new Koa();
 const navDataFactory = new (require('./NavDataFactory'))(basePath);
 

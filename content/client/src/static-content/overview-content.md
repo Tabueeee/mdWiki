@@ -2,7 +2,7 @@
 ```js
 <div class="container">
     <div>
-        {% include '../component/nav-menu/menu-template-basic.twig' with {navigationData: navigationData} only %}
+        {% include '../component/nav-menu/nav-menu-template-basic.twig' with {navigationData: navigationData} only %}
     </div>
 </div>
  ```

@@ -4,13 +4,13 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "clean": "node -e \"require('fs-extra').emptyDirSync(__dirname + '/../dist/');\"",
+    "clean": "node -e \"require('fs-extra').emptyDirSync('dist/');\"",
     "test": "echo \"Error: no test specified\" && exit 1",
     "bundle": "browserify -u chart.js -u highlight.js -t [ stringify --extensions [.html] ] -p [ tsify --project tsconfig.json ] --debug src/script/main.ts > dist/bundle.js",
     "preuglify": "npm run bundle",
     "uglify": "uglifyjs dist/bundle.js --compress --mangle > dist/bundle.min.js",
     "build-css": "node task/sass.js && node task/cssmin.js && node task/uncss.js",
-    "all": "npm run uglify && npm run build-css"
+    "all": "npm run clean && npm run uglify && npm run build-css"
   },
   "author": "",
   "license": "ISC",

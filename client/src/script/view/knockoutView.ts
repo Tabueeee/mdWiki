@@ -2,34 +2,41 @@ import {FlatNavigationEntry} from '../interface/FlatNavigationEntry';
 import {PageChanger} from '../common/PageChanger';
 import {FileSearch} from '../../component/file-search/FileSearch';
 import {NavMenu} from '../../component/nav-menu/NavMenu';
-import Chart = require('chart.js');
-import {ViewBarChartDataSet} from './interface/ViewBarChart';
-import {ViewCategory} from './interface/ViewCategory';
 import {applyBindings, bindingHandlers, components, observable} from 'knockout';
 import {ChartHandler} from './handler/ChartHandler';
+import {BarChartDataSet} from '../interface/BarChartDataSet';
+import Chart = require('chart.js');
+import {ViewModelFactory} from './ViewModelFactory';
 
-// @ts-ignore injected by browserify
-const chartOptions = require('../../../data/staticChartData.json');
 const useDOMContentAsTemplate = (className: string) => `<div class="${className}" data-bind="template: { nodes: $componentTemplateNodes, data: $component }"></div>`;
 
 export class KnockoutView {
     private pageChanger: PageChanger;
     private chartJsPromise: Promise<Chart>;
+    private categoriesVMFactory: ViewModelFactory;
+    private chartData: any;
 
-    public constructor(pageChanger: PageChanger, chartJsPromise: Promise<Chart>) {
+    public constructor(pageChanger: PageChanger, chartJsPromise: Promise<Chart>, categoriesVMFactory: ViewModelFactory) {
         this.pageChanger = pageChanger;
         this.chartJsPromise = chartJsPromise;
+        this.categoriesVMFactory = categoriesVMFactory;
+        this.chartData = this.categoriesVMFactory.createChartData();
     }
 
-    public registerElements(categories: Array<ViewCategory>, data: Array<FlatNavigationEntry>, chartData: ViewBarChartDataSet) {
+    public updateChartData(chartData: BarChartDataSet) {
+        this.categoriesVMFactory.updateChartData(this.chartData.data, chartData);
+    }
+
+    public registerElements(flatNavigationEntries: Array<FlatNavigationEntry>) {
         // register handlers
         bindingHandlers.chart = ChartHandler(this.chartJsPromise);
+        const categories = this.categoriesVMFactory.createViewCategories(flatNavigationEntries);
 
         // register components
-        components.register('file-search', {
-            template: useDOMContentAsTemplate('file-search'),
-            viewModel: {instance: new FileSearch(data)}
-        });
+        components.register(
+            'file-search',
+            {template: useDOMContentAsTemplate('file-search'), viewModel: {instance: new FileSearch(flatNavigationEntries)}}
+        );
         components.register('nav-menu', {template: {element: 'nav-menu-template'}, viewModel: {instance: new NavMenu(categories)}});
 
         // global-scope
@@ -44,11 +51,7 @@ export class KnockoutView {
                 this.pageChanger.changePage(true, url);
             },
             // add chart to global scope because lazy - probably better injected via data-attribute or ajax route
-            chartFake1: {
-                type: 'bar',
-                data: chartData,
-                options: chartOptions
-            },
+            chartFake1: this.chartData,
             isLoading: isLoading
         };
 

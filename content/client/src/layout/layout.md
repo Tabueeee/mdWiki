@@ -12,45 +12,42 @@
     <link rel="preload" href="/style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <link rel="preload" href="/bundle.js" as="script">
     <link rel="preload" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/highlight.min.js" as="script">
-
     <noscript>
         <link rel="stylesheet" href="/style.css">
     </noscript>
     <script defer src="/bundle.js"></script>
 
     <template id="nav-menu-template">
-        {% include '../component/nav-menu/menu-template.html' %}
+        {% include '../component/nav-menu/nav-menu-template.html' %}
     </template>
 </head>
 
 <body>
-<div class="ko-root">
-    <header class="navbar is-primary" role="navigation" aria-label="main navigation">
-        {% include '../component/header/header-template.html' %}
-    </header>
-    <div class="content-wrap container columns">
-        <nav class="column column-left is-one-quarter-desktop is-one-third-tablet">
-            <file-search data-bind="visible: true" style="display:none;">
-                {% include '../component/file-search/file-search-template.html' %}
-            </file-search>
+<header class="navbar is-primary" role="navigation" aria-label="main navigation">
+    {% include '../component/header/header-template.html' %}
+</header>
+<div class="content-wrap container columns">
+    <nav class="column column-left is-one-quarter-desktop is-one-third-tablet">
+        <file-search data-bind="visible: true" style="display:none;">
+            {% include '../component/file-search/file-search-template.html' %}
+        </file-search>
 
-            <nav-menu>
-                {% include '../component/nav-menu/menu-template-basic.twig' with {navigationData: navigationData} only %}
-            </nav-menu>
-        </nav>
+        <nav-menu>
+            {% include '../component/nav-menu/nav-menu-template-basic.twig' with {navigationData: navigationData} only %}
+        </nav-menu>
+    </nav>
 
-        <main class="column">
-            {% include '../component/loading-indicator/loading-indicator-template.html' %}
-            <article>
-                <div id="content">
-                    <div class="content content-loaded">
-                        {% block mainContent %}
-                        {% endblock mainContent %}
-                    </div>
+    <main class="column">
+        {% include '../component/loading-indicator/loading-indicator-template.html' %}
+        <article>
+            <div id="content">
+                <div class="content content-loaded">
+                    {% block mainContent %}
+                    {% endblock mainContent %}
                 </div>
-            </article>
-        </main>
-    </div>
+            </div>
+        </article>
+    </main>
 </div>
 </body>
 </html>

@@ -1,10 +1,10 @@
 # G:/dev/01_projects/mdWiki/client/src/component/file-search/FileSearch.ts
 ```js
 import {computed, observable} from 'knockout';
-import {FlatNavigationEntryList} from '../../script/interface/FlatNavigationEntryList';
+import {FlatNavigationEntry} from '../../script/interface/FlatNavigationEntry';
 
 export class FileSearch {
-    private data: Array<FlatNavigationEntryList>;
+    private data: Array<FlatNavigationEntry>;
     public searchString = observable('');
     public filteredItems = computed(() => {
         if (this.searchString() === '') {
@@ -14,7 +14,7 @@ export class FileSearch {
         return this.data.filter((item) => (item.url.toLowerCase()).includes((this.searchString().toLocaleLowerCase())));
     });
 
-    public constructor(data: Array<FlatNavigationEntryList>) {
+    public constructor(data: Array<FlatNavigationEntry>) {
         this.data = data;
     }
 }

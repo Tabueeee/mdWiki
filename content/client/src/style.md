@@ -1,11 +1,7 @@
 # G:/dev/01_projects/mdWiki/client/src/style.scss
 ```js
 @import "../node_modules/bulma/bulma";
-
 @import "component/**/*.scss";
-
-//@import "component/file-search/**/*.css";
-
 
 // no-flex-box-styles
 
@@ -17,22 +13,7 @@
   }
 }
 
-.navbar-item {
-  @media (max-width: 769px) {
-    float: left;
-  }
-}
-
 // end no-flex-box-styles
-
-.loading-container {
-  margin-top: 150px;
-}
-
-.loading-text {
-  text-align: center;
-  width: 100%;
-}
 
 .content-wrap {
   padding: 15px;
@@ -41,10 +22,6 @@
 
 main {
   overflow: auto;
-}
-
-.nav-menu {
-  margin-top: 15px;
 }
 
 

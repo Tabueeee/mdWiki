@@ -1,8 +1,7 @@
 # G:/dev/01_projects/mdWiki/client/src/component/nav-menu/NavMenu.ts
 ```js
 import {observableArray, ObservableArray} from 'knockout';
-import {ViewCategory} from '../../script/interface/ViewCategory';
-import {Subcategory} from '../../script/interface/NavigationData';
+import {Subcategory, ViewCategory} from '../../script/view/interface/ViewCategory';
 
 export class NavMenu {
     public navItems: ObservableArray<ViewCategory>;

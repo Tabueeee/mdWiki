@@ -1,4 +1,3 @@
-import {CategoriesVMFactory} from './viewFactory/CategoriesVMFactory';
 import {FlatNavigationEntry} from './interface/FlatNavigationEntry';
 import {KnockoutView} from './view/knockoutView';
 import {BarChartDataSet} from './interface/BarChartDataSet';
@@ -6,12 +5,13 @@ import {PageChanger} from './common/PageChanger';
 import {getScript} from './common/getScript';
 // not injected by browserify - loaded lazily
 import * as hljs from 'highlight.js';
+import {HttpHelper} from './common/HttpHelper';
 // not injected by browserify - loaded lazily
 import Chart = require('chart.js');
-import {HttpHelper} from './common/HttpHelper';
+import {ViewModelFactory} from './view/ViewModelFactory';
 // @ts-ignore injected by browserify
 const chartData: BarChartDataSet = require('../../data/mockedChartData.json');
-const rawNavigationData: Array<FlatNavigationEntry> = window.data || [];
+const flatNavigationEntries: Array<FlatNavigationEntry> = window.data || [];
 
 // @ts-ignore injected by browserify
 const getRequestOptions = require('../../data/getRequestOptions.json');
@@ -38,23 +38,25 @@ highlightJSLoadedPromise
         });
     }).catch(() => undefined);
 
-let {flatNavigationEntries, categories, barChartView} =  new CategoriesVMFactory().createVm(rawNavigationData, chartData);
 
-let koView: KnockoutView = new KnockoutView(pageChanger, chartJSLoadedPromise);
-koView.registerElements(categories, flatNavigationEntries, barChartView);
+let koView: KnockoutView = new KnockoutView(pageChanger, chartJSLoadedPromise, new ViewModelFactory());
+koView.registerElements(flatNavigationEntries);
+koView.updateChartData(chartData);
 
 // simulate changing chartData
 let intervalIndex = 0;
 setInterval(() => {
     // In real application data might come from ajax / (redux) state updates / user input etc.
     if (document.body.querySelector('canvas')) {
-        barChartView.labels.push('NEW_' + intervalIndex ++);
-        barChartView.datasets[0].data.push(Math.floor(Math.random() * 100));
-        barChartView.datasets[0].backgroundColor.push(
+        chartData.labels.push('NEW_' + intervalIndex ++);
+        chartData.datasets[0].data.push(Math.floor(Math.random() * 100));
+        chartData.datasets[0].backgroundColor.push(
             `rgba(${Math.floor(Math.random() * 255)}, ${Math.floor(Math.random() * 255)}, ${Math.floor(Math.random() * 255)}, 0.2)`
         );
-        barChartView.datasets[0].borderColor.push(
+        chartData.datasets[0].borderColor.push(
             `rgba(${Math.floor(Math.random() * 255)}, ${Math.floor(Math.random() * 255)}, ${Math.floor(Math.random() * 255)}, 0.2)`
         );
+
+        koView.updateChartData(chartData);
     }
 }, (5000 + Math.floor(Math.random() * 10000)));

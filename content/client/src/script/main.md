@@ -1,20 +1,20 @@
 # G:/dev/01_projects/mdWiki/client/src/script/main.ts
 ```js
-import {CategoriesVMFactory} from './viewFactory/CategoriesVMFactory';
-import {NavigationData} from './interface/NavigationData';
-import {FlatNavigationEntryList} from './interface/FlatNavigationEntryList';
+import {FlatNavigationEntry} from './interface/FlatNavigationEntry';
 import {KnockoutView} from './view/knockoutView';
 import {BarChartDataSet} from './interface/BarChartDataSet';
 import {PageChanger} from './common/PageChanger';
 import {getScript} from './common/getScript';
 // not injected by browserify - loaded lazily
 import * as hljs from 'highlight.js';
+import {HttpHelper} from './common/HttpHelper';
 // not injected by browserify - loaded lazily
 import Chart = require('chart.js');
+import {ViewModelFactory} from './view/ViewModelFactory';
 // @ts-ignore injected by browserify
 const chartData: BarChartDataSet = require('../../data/mockedChartData.json');
-const rawNavigationData: Array<FlatNavigationEntryList> = window.data || [];
-const navigationData: NavigationData = new CategoriesVMFactory().createVm(rawNavigationData);
+const flatNavigationEntries: Array<FlatNavigationEntry> = window.data || [];
+
 // @ts-ignore injected by browserify
 const getRequestOptions = require('../../data/getRequestOptions.json');
 
@@ -38,19 +38,18 @@ highlightJSLoadedPromise
                 hl.initHighlighting();
             }
         });
-    });
+    }).catch(() => undefined);
 
 
-let koView: KnockoutView = new KnockoutView(pageChanger, chartJSLoadedPromise);
-koView.registerElements(navigationData, rawNavigationData, chartData);
-
+let koView: KnockoutView = new KnockoutView(pageChanger, chartJSLoadedPromise, new ViewModelFactory());
+koView.registerElements(flatNavigationEntries);
+koView.updateChartData(chartData);
 
 // simulate changing chartData
 let intervalIndex = 0;
 setInterval(() => {
+    // In real application data might come from ajax / (redux) state updates / user input etc.
     if (document.body.querySelector('canvas')) {
-        console.log('creating new entry: NEW_' + (intervalIndex + 1));
-        console.log(chartData);
         chartData.labels.push('NEW_' + intervalIndex ++);
         chartData.datasets[0].data.push(Math.floor(Math.random() * 100));
         chartData.datasets[0].backgroundColor.push(
@@ -59,6 +58,8 @@ setInterval(() => {
         chartData.datasets[0].borderColor.push(
             `rgba(${Math.floor(Math.random() * 255)}, ${Math.floor(Math.random() * 255)}, ${Math.floor(Math.random() * 255)}, 0.2)`
         );
+
+        koView.updateChartData(chartData);
     }
 }, (5000 + Math.floor(Math.random() * 10000)));
  ```

@@ -5,7 +5,8 @@
   "main": "src/koaServer.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node src/koaServer.js"
+    "start": "node src/koaServer.js",
+    "verbose": "npm run start -- --v"
   },
   "author": "",
   "license": "ISC",
