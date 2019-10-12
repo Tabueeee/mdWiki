@@ -423,6 +423,21 @@
             </PaintGroupHighlightMap>
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/client/src/component/file-search/file-search-stzles.scss">
+          <value>
+            <PaintGroupHighlightMap>
+              <option name="paintGroups">
+                <map>
+                  <entry key="0">
+                    <value>
+                      <EditorHighlightsForPaintGroup />
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </PaintGroupHighlightMap>
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/client/src/component/file-search/file-search-template.html">
           <value>
             <PaintGroupHighlightMap>
@@ -708,6 +723,21 @@
             </PaintGroupHighlightMap>
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/client/src/layout/header-sidebar-content.twig">
+          <value>
+            <PaintGroupHighlightMap>
+              <option name="paintGroups">
+                <map>
+                  <entry key="0">
+                    <value>
+                      <EditorHighlightsForPaintGroup />
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </PaintGroupHighlightMap>
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/client/src/layout/layout-sidebar.twig">
           <value>
             <PaintGroupHighlightMap>
@@ -739,6 +769,36 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/client/src/overview.twig">
+          <value>
+            <PaintGroupHighlightMap>
+              <option name="paintGroups">
+                <map>
+                  <entry key="0">
+                    <value>
+                      <EditorHighlightsForPaintGroup />
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </PaintGroupHighlightMap>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/client/src/page/index-sitemap.twig">
+          <value>
+            <PaintGroupHighlightMap>
+              <option name="paintGroups">
+                <map>
+                  <entry key="0">
+                    <value>
+                      <EditorHighlightsForPaintGroup />
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </PaintGroupHighlightMap>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/client/src/page/markdown-page.twig">
           <value>
             <PaintGroupHighlightMap>
               <option name="paintGroups">
@@ -1879,6 +1939,66 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/content/Knowledgebase/seo.md">
+          <value>
+            <PaintGroupHighlightMap>
+              <option name="paintGroups">
+                <map>
+                  <entry key="0">
+                    <value>
+                      <EditorHighlightsForPaintGroup />
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </PaintGroupHighlightMap>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/content/client/src/component/file-search/FileSearch.md">
+          <value>
+            <PaintGroupHighlightMap>
+              <option name="paintGroups">
+                <map>
+                  <entry key="0">
+                    <value>
+                      <EditorHighlightsForPaintGroup />
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </PaintGroupHighlightMap>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/content/client/src/component/file-search/file-search-template.md">
+          <value>
+            <PaintGroupHighlightMap>
+              <option name="paintGroups">
+                <map>
+                  <entry key="0">
+                    <value>
+                      <EditorHighlightsForPaintGroup />
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </PaintGroupHighlightMap>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/content/client/src/component/header/header-styles.md">
+          <value>
+            <PaintGroupHighlightMap>
+              <option name="paintGroups">
+                <map>
+                  <entry key="0">
+                    <value>
+                      <EditorHighlightsForPaintGroup />
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </PaintGroupHighlightMap>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/content/client/src/component/header/header-template.md">
           <value>
             <PaintGroupHighlightMap>
               <option name="paintGroups">

@@ -1,5 +1,5 @@
 # G:/dev/01_projects/mdWiki/client/src/script/view/knockoutView.ts
-```js
+```typescript
 import {FlatNavigationEntry} from '../interface/FlatNavigationEntry';
 import {PageChanger} from '../common/PageChanger';
 import {FileSearch} from '../../component/file-search/FileSearch';

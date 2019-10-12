@@ -52,6 +52,17 @@
 - \[Accessibility] Screen-reader/odd-Devices support -> usable (no-css & no-js)
 - < 50 lines of Framework specific code
 
+---
+
+## Notes
+- css to small to load async => causes unnecessary repaint
+- preloading scripts increases 'Max Potential First Input Delay' but reduces all other metrics and input delay stays below 200ms
+
+
+---
+
+
+
 ## FileIndex
 
 ### CategoriesVMFactory.js

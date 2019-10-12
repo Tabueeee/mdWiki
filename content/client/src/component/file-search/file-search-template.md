@@ -1,26 +1,21 @@
 # G:/dev/01_projects/mdWiki/client/src/component/file-search/file-search-template.html
-```js
+```html
 <div class="panel">
-    <p class="panel-heading">File-Search</p>
+    <label for="searchInput" class="panel-heading">File-Search</label>
 
     <div class="panel-block">
-        <p class="control has-icons-left">
+        <p class="control">
             <input class="input is-small"
                    type="text"
+                   id="searchInput"
                    placeholder="search something..."
                    data-bind="textInput: searchString">
-            <span class="icon is-small is-left">
-                <i class="fas fa-search" aria-hidden="true"></i>
-            </span>
         </p>
     </div>
 
-    <div data-bind="foreach: filteredItems">
+    <div data-bind="foreach: filteredNavigationEntries">
         <a class="panel-block"
            data-bind="click: $root.changePage.bind($root, url), css: {'is-active': $root.currentUrl() == url}">
-            <span class="panel-icon">
-                <i class="fas fa-book" aria-hidden="true"></i>
-            </span>
             <span data-bind="text: url.replace('.html', '')"></span>
         </a>
     </div>

@@ -1,5 +1,5 @@
 # G:/dev/01_projects/mdWiki/client/src/component/nav-menu/NavMenu.ts
-```js
+```typescript
 import {observableArray, ObservableArray} from 'knockout';
 import {Subcategory, ViewCategory} from '../../script/view/interface/ViewCategory';
 

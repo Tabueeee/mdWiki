@@ -1,5 +1,5 @@
 # G:/dev/01_projects/mdWiki/client/src/script/view/handler/ChartHandler.ts
-```js
+```typescript
 import {BindingHandler, toJS} from 'knockout';
 
 export function ChartHandler(ChartResolvedPromise: Promise<any>): BindingHandler {

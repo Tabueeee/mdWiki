@@ -1,5 +1,5 @@
-# G:/dev/01_projects/mdWiki/client/src/layout/layout.twig
-```js
+# G:/dev/01_projects/mdWiki/client/src/layout/header-sidebar-content.twig
+```twig
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="de">
 
@@ -9,13 +9,11 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="description" content="Wiki">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="preload" href="/style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <link rel="preload" href="/bundle.js" as="script">
-    <link rel="preload" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/highlight.min.js" as="script">
-    <noscript>
-        <link rel="stylesheet" href="/style.css">
-    </noscript>
-    <script defer src="/bundle.js"></script>
+    <link rel="stylesheet" href="/style{{ assetUID }}.css">
+    <link rel="preload" href="/bundle{{ assetUID }}.js" as="script">
+    <script defer src="/bundle{{ assetUID }}.js"></script>
+    <link rel="preload" href="/highlight.js" as="script">
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.bundle.min.js" as="script">
 
     <template id="nav-menu-template">
         {% include '../component/nav-menu/nav-menu-template.html' %}

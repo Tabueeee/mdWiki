@@ -6,9 +6,9 @@ import {getScript} from './common/getScript';
 // not injected by browserify - loaded lazily
 import * as hljs from 'highlight.js';
 import {HttpHelper} from './common/HttpHelper';
+import {ViewModelFactory} from './view/ViewModelFactory';
 // not injected by browserify - loaded lazily
 import Chart = require('chart.js');
-import {ViewModelFactory} from './view/ViewModelFactory';
 // @ts-ignore injected by browserify
 const chartData: BarChartDataSet = require('../../data/mockedChartData.json');
 const flatNavigationEntries: Array<FlatNavigationEntry> = window.data || [];
@@ -18,16 +18,19 @@ const getRequestOptions = require('../../data/getRequestOptions.json');
 
 const httpHelper: HttpHelper = new HttpHelper(getRequestOptions);
 const pageChanger: PageChanger = new PageChanger(httpHelper);
+const viewModelFactory: ViewModelFactory = new ViewModelFactory();
 
 // Lazily load 3rd Party Scripts
-let chartJSLoadedPromise: Promise<Chart> = getScript<Chart>('//cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.bundle.min.js', 'Chart');
+let chartJSLoadedPromise: Promise<Chart> = getScript<Chart>('https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.bundle.min.js', 'Chart');
+
 let highlightJSLoadedPromise: Promise<typeof hljs> = getScript<typeof hljs>(
-    '//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/highlight.min.js',
+    '/highlight.js',
     'hljs'
 );
 highlightJSLoadedPromise
     .then(function (hl: typeof hljs) {
         hl.initHighlighting();
+
         // refresh hljs on page load
         pageChanger.subscribeLoadingStateChange((loadingState: boolean) => {
             if (!loadingState) {
@@ -38,8 +41,7 @@ highlightJSLoadedPromise
         });
     }).catch(() => undefined);
 
-
-let koView: KnockoutView = new KnockoutView(pageChanger, chartJSLoadedPromise, new ViewModelFactory());
+let koView: KnockoutView = new KnockoutView(pageChanger, chartJSLoadedPromise, viewModelFactory);
 koView.registerElements(flatNavigationEntries);
 koView.updateChartData(chartData);
 

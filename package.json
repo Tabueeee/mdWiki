@@ -15,7 +15,8 @@
     "koa": "^2.8.2",
     "koa-compress": "^3.0.0",
     "marked": "^0.7.0",
-    "twig": "^1.13.3"
+    "twig": "^1.13.3",
+    "uniqid": "^5.0.3"
   },
   "devDependencies": {
     "fs-extra": "^8.1.0"

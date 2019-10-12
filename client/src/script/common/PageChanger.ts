@@ -42,7 +42,26 @@ export class PageChanger {
                 this.broadcastLoadingStateChange(false);
             })
             // todo handle failed fetch (server unavailable)
-            .catch(() => undefined);
+            .catch(() => {
+                contentNode.innerHTML = `
+                <div class="message is-danger">
+                    <div class="message-body">
+                        <p>Server is unavailable you can try again below:</p>                        
+                    </div>
+                </div>`;
+                let aElement = document.createElement('a');
+                aElement.href = link;
+                aElement.innerHTML = '<strong>try again</strong>';
+                aElement.addEventListener('click', (event) => {
+                    event.preventDefault();
+                    this.changePage(push, link);
+                });
+                (<HTMLElement>contentNode.querySelector('.message-body')).appendChild(aElement);
+                contentNode.setAttribute('id', 'content-loaded');
+                contentNode.setAttribute('class', 'content');
+                contentElement.appendChild(contentNode);
+                this.broadcastLoadingStateChange(false);
+            });
     }
 
     private broadcastLoadingStateChange(state: boolean) {

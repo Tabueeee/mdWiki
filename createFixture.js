@@ -2,6 +2,16 @@ const glob = require('util').promisify(require('glob'));
 // const path = require('path');
 const fs = require('fs-extra');
 
+
+const typeMap = {
+    ts: 'typescript',
+    js: 'js',
+    html: 'html',
+    twig: 'twig',
+    scss: 'scss',
+    css: 'css'
+};
+
 (async () => {
     fs.emptyDirSync(__dirname + '/content/client/');
     fs.emptyDirSync(__dirname + '/content/server/');
@@ -23,7 +33,8 @@ const fs = require('fs-extra');
 async function writeFileFixture(filePath, replace, targetPath) {
     let content = fs.readFileSync(filePath, 'utf8');
 
-    content = '# ' + filePath + '\n```js\n' + content + ' ```';
+    let type = filePath.substr(filePath.lastIndexOf('.') + 1);
+    content = '# ' + filePath + '\n```' + typeMap[type] + '\n' + content + ' ```';
 
     let path = filePath.substr(0, filePath.lastIndexOf('.'));
     path = path + '.md';

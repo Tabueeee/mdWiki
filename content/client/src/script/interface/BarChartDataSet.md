@@ -1,5 +1,5 @@
 # G:/dev/01_projects/mdWiki/client/src/script/interface/BarChartDataSet.ts
-```js
+```typescript
 export interface BarChartDataSet {
     labels: Array<string>,
     datasets: Array<BarChartDataSetEntry>

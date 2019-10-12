@@ -1,5 +1,5 @@
 # G:/dev/01_projects/mdWiki/client/src/script/interface/Window.ts
-```js
+```typescript
 import {FlatNavigationEntry} from './FlatNavigationEntry';
 
 declare global {
