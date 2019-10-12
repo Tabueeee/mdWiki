@@ -7,6 +7,7 @@ import {ChartHandler} from './handler/ChartHandler';
 import {BarChartDataSet} from '../interface/BarChartDataSet';
 import Chart = require('chart.js');
 import {ViewModelFactory} from './ViewModelFactory';
+import {ThemeSelector} from '../../component/theme-selector/ThemeSelector';
 
 const useDOMContentAsTemplate = (className: string) => `<div class="${className}" data-bind="template: { nodes: $componentTemplateNodes, data: $component }"></div>`;
 
@@ -36,6 +37,10 @@ export class KnockoutView {
         components.register(
             'file-search',
             {template: useDOMContentAsTemplate('file-search'), viewModel: {instance: new FileSearch(flatNavigationEntries)}}
+        );
+        components.register(
+            'theme-selector',
+            {template: {element: 'theme-selector-template'}, viewModel: {instance: new ThemeSelector()}}
         );
         components.register('nav-menu', {template: {element: 'nav-menu-template'}, viewModel: {instance: new NavMenu(categories)}});
 

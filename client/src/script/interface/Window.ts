@@ -2,6 +2,6 @@ import {FlatNavigationEntry} from './FlatNavigationEntry';
 
 declare global {
     interface Window {
-        data: Array<FlatNavigationEntry>;
+        serverData: { assetUID: string, flatNavigationEntries: Array<FlatNavigationEntry> };
     }
 }

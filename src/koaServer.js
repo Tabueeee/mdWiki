@@ -38,7 +38,7 @@ const assets = {
 
 assets['/bundle' + assetUID + '.js'] = {
     type: 'application/javascript',
-    body: (navigationData) => '(function(data, window){window.data = data;' + js + '})(' + JSON.stringify(navigationData) + ', window);'
+    body: (navigationData) => '(function(serverData, window){window.serverData = serverData;' + js + '})(' + JSON.stringify({assetUID, flatNavigationEntries: navigationData}) + ', window);'
 };
 assets['/style' + assetUID + '.css'] = {type: 'text/css', body: () => style};
 

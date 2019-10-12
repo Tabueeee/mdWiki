@@ -26,7 +26,8 @@ const renderTwigFile = require('util').promisify(twig.renderFile);
         htmlroot: 'dist/',
         banner: false,
         inject: function (window) {
-            window.data = [];
+            window.serverData = {assetUID: ''};
+            window.serverData.flatNavigationEntries = [];
             window.document.body.appendChild = function () {
             };
         },

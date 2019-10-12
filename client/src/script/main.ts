@@ -11,7 +11,7 @@ import {ViewModelFactory} from './view/ViewModelFactory';
 import Chart = require('chart.js');
 // @ts-ignore injected by browserify
 const chartData: BarChartDataSet = require('../../data/mockedChartData.json');
-const flatNavigationEntries: Array<FlatNavigationEntry> = window.data || [];
+const flatNavigationEntries: Array<FlatNavigationEntry> = window.serverData.flatNavigationEntries || [];
 
 // @ts-ignore injected by browserify
 const getRequestOptions = require('../../data/getRequestOptions.json');
