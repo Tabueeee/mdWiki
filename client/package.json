@@ -30,6 +30,7 @@
     "node-sass-glob-importer": "^5.3.2",
     "stringify": "^5.2.0",
     "tsify": "^4.0.1",
+    "tslib": "^1.10.0",
     "twig": "^1.13.3",
     "typescript": "^3.6.3",
     "uglify-es": "^3.3.9",

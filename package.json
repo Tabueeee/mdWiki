@@ -6,6 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node src/koaServer.js",
+    "watch": "nodemon --watch dist/ --watch static/ --watch src/ npm start",
     "verbose": "npm run start -- --v"
   },
   "author": "",
@@ -15,10 +16,12 @@
     "koa": "^2.8.2",
     "koa-compress": "^3.0.0",
     "marked": "^0.7.0",
+    "mime-types": "^2.1.24",
     "twig": "^1.13.3",
     "uniqid": "^5.0.3"
   },
   "devDependencies": {
-    "fs-extra": "^8.1.0"
+    "fs-extra": "^8.1.0",
+    "nodemon": "^1.19.3"
   }
 }

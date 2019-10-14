@@ -8,6 +8,8 @@
     - Menu 
 3. Hide until available
     - File Search
+    - loading-indicator
+    - theme-selector
 
 ## Template locations
 
@@ -20,3 +22,5 @@
 3. Template bundled in js 
     - for replacing (2) 
 
+- fetch polyfill
+- promise polyfill

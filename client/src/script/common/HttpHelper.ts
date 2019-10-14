@@ -1,5 +1,5 @@
 export class HttpHelper {
-    private getRequestOptions: RequestInit;
+    private readonly getRequestOptions: RequestInit;
 
     public constructor(getRequestOptions: RequestInit) {
         this.getRequestOptions = getRequestOptions;

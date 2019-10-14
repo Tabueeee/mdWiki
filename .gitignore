@@ -142,3 +142,4 @@ typings/
 client/dist/
 client/build/
 .idea/sonarlint/
+myContent/

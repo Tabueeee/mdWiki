@@ -11,6 +11,7 @@
       "dom"
     ],
     "moduleResolution": "node",
+    "importHelpers": true,
     "experimentalDecorators": true,
     "noEmitOnError": false,
     "allowUnreachableCode": false,
