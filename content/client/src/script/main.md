@@ -3,7 +3,6 @@
 import {FlatNavigationEntry} from './interface/FlatNavigationEntry';
 import {KnockoutView} from './view/knockoutView';
 import {BarChartDataSet} from './interface/BarChartDataSet';
-import {PageChanger} from './common/PageChanger';
 import {getScript} from './common/getScript';
 // not injected by browserify - loaded lazily
 import * as hljs from 'highlight.js';
@@ -11,9 +10,11 @@ import {HttpHelper} from './common/HttpHelper';
 import {ViewModelFactory} from './view/ViewModelFactory';
 // not injected by browserify - loaded lazily
 import Chart = require('chart.js');
+import {PageState} from './interface/PageState';
+import {PageChanger} from './common/PageChanger';
 // @ts-ignore injected by browserify
 const chartData: BarChartDataSet = require('../../data/mockedChartData.json');
-const flatNavigationEntries: Array<FlatNavigationEntry> = window.data || [];
+const flatNavigationEntries: Array<FlatNavigationEntry> = window.serverData.flatNavigationEntries || [];
 
 // @ts-ignore injected by browserify
 const getRequestOptions = require('../../data/getRequestOptions.json');
@@ -34,8 +35,8 @@ highlightJSLoadedPromise
         hl.initHighlighting();
 
         // refresh hljs on page load
-        pageChanger.subscribeLoadingStateChange((loadingState: boolean) => {
-            if (!loadingState) {
+        pageChanger.subscribeLoadingStateChange((loadingState: PageState) => {
+            if (!loadingState.isLoading && loadingState.successful) {
                 // undocumented property
                 (<any>hl.initHighlighting).called = false;
                 hl.initHighlighting();

@@ -5,7 +5,7 @@ const path = require('path');
 
 var NavDataFactory = function (basePath) {
     var createNavData = async function () {
-        let files = await glob(__dirname + '/../content/**/*.md');
+        let files = await glob(basePath + '**/*.md');
 
         let navItems = [];
 

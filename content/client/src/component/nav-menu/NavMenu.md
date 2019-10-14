@@ -2,6 +2,7 @@
 ```typescript
 import {observableArray, ObservableArray} from 'knockout';
 import {Subcategory, ViewCategory} from '../../script/view/interface/ViewCategory';
+import {__assign} from 'tslib';
 
 export class NavMenu {
     public navItems: ObservableArray<ViewCategory>;
@@ -11,7 +12,7 @@ export class NavMenu {
     }
 
     public toggle(category: ViewCategory, clickedEntry: Subcategory) {
-        category.entries.replace(clickedEntry, Object.assign({}, clickedEntry, {collapsed: !clickedEntry.collapsed}));
+        category.entries.replace(clickedEntry, __assign({}, clickedEntry, {collapsed: !clickedEntry.collapsed}));
     }
 }
  ```

@@ -1,0 +1,15 @@
+# G:/dev/01_projects/mdWiki/client/src/component/theme-selector/theme-selector-template.html
+```html
+<div class="field has-addons">
+    <p class="control">
+        <a class="button" data-bind="css: {'is-active': activeTheme() === 'light'}, click: activeTheme.bind(null, 'light')">
+            <span>Light</span>
+        </a>
+    </p>
+    <p class="control">
+        <a class="button" data-bind="css: {'is-active': activeTheme() === 'dark'}, click: activeTheme.bind(null, 'dark')">
+            <span>Dark</span>
+        </a>
+    </p>
+</div>
+ ```

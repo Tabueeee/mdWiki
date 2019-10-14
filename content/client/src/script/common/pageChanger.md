@@ -1,72 +1,47 @@
 # G:/dev/01_projects/mdWiki/client/src/script/common/PageChanger.ts
 ```typescript
 import {HttpHelper} from './HttpHelper';
+import {PageState} from '../interface/PageState';
 
 export class PageChanger {
 
-    private loadingStateChangeSubscribers: Array<(loadingState: boolean) => void> = [];
+    private loadingStateChangeSubscribers: Array<(state: PageState) => void> = [];
     private httpHelper: HttpHelper;
 
     public constructor(httpHelper: HttpHelper) {
         this.httpHelper = httpHelper;
         window.addEventListener('popstate', (event: PopStateEvent) => {
             // @ts-ignore typings wrong? or chrome only?
-            this.changePage(false, event.target.location.href.replace('http://127.0.0.1:3001', ''));
+            this.changePage(false, event.target.location.href);
         });
     }
 
-    public subscribeLoadingStateChange(cb: (loadingState: boolean) => void) {
+    public subscribeLoadingStateChange(cb: (state: PageState) => void) {
         this.loadingStateChangeSubscribers.push(cb);
     }
 
     public changePage(push: boolean, link: string) {
-        let contentElement: HTMLElement = (<HTMLElement>document.getElementById('content'));
-        let contentNode = document.createElement('div');
-
         this.abortFetch();
-        this.broadcastLoadingStateChange(true);
-        contentElement.innerHTML = '';
+        this.broadcastLoadingStateChange({isLoading: true, requestLink: link});
 
-        let getHandler = this.httpHelper.htmlGet('http://127.0.0.1:3001' + link + '?content=1');
+        let getHandler = this.httpHelper.htmlGet(link + '?content=1');
         this.abortFetch = getHandler.abortFetch;
         getHandler
             .promise
             .then((text: string) => {
-                contentNode.innerHTML = text;
-                contentNode.setAttribute('id', 'content-loaded');
-                contentNode.setAttribute('class', 'content');
-                contentElement.appendChild(contentNode);
-
                 if (push) {
-                    history.pushState({url: link}, link.substr(link.lastIndexOf('/')), 'http://127.0.0.1:3001' + link);
+                    history.pushState({url: link}, link.substr(link.lastIndexOf('/')), link);
                 }
 
-                this.broadcastLoadingStateChange(false);
+                this.broadcastLoadingStateChange({isLoading: false, successful: true, response: text, requestLink: link});
             })
-            // todo handle failed fetch (server unavailable)
-            .catch(() => {
-                contentNode.innerHTML = `
-                <div class="message is-danger">
-                    <div class="message-body">
-                        <p>Server is unavailable you can try again below:</p>                        
-                    </div>
-                </div>`;
-                let aElement = document.createElement('a');
-                aElement.href = link;
-                aElement.innerHTML = '<strong>try again</strong>';
-                aElement.addEventListener('click', (event) => {
-                    event.preventDefault();
-                    this.changePage(push, link);
-                });
-                (<HTMLElement>contentNode.querySelector('.message-body')).appendChild(aElement);
-                contentNode.setAttribute('id', 'content-loaded');
-                contentNode.setAttribute('class', 'content');
-                contentElement.appendChild(contentNode);
-                this.broadcastLoadingStateChange(false);
+            // handle failed fetch (server unavailable)
+            .catch((e) => {
+                this.broadcastLoadingStateChange({isLoading: false, successful: false, requestLink: link, response: e.toString()});
             });
     }
 
-    private broadcastLoadingStateChange(state: boolean) {
+    private broadcastLoadingStateChange(state: PageState) {
         for (let cb of this.loadingStateChangeSubscribers) {
             cb(state);
         }

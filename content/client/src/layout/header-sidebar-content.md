@@ -10,6 +10,7 @@
     <meta name="description" content="Wiki">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="/style{{ assetUID }}.css">
+    {#    <link rel="stylesheet" href="/darkly.min.css">#}
     <link rel="preload" href="/bundle{{ assetUID }}.js" as="script">
     <script defer src="/bundle{{ assetUID }}.js"></script>
     <link rel="preload" href="/highlight.js" as="script">
@@ -17,6 +18,12 @@
 
     <template id="nav-menu-template">
         {% include '../component/nav-menu/nav-menu-template.html' %}
+    </template>
+    <template id="theme-selector-template">
+        {% include '../component/theme-selector/theme-selector-template.html' %}
+    </template>
+    <template id="body-message-template">
+        {% include '../component/body-message/body-message-template.html' %}
     </template>
 </head>
 
@@ -37,12 +44,10 @@
 
     <main class="column">
         {% include '../component/loading-indicator/loading-indicator-template.html' %}
-        <article>
-            <div id="content">
-                <div class="content content-loaded">
-                    {% block mainContent %}
-                    {% endblock mainContent %}
-                </div>
+        <article id="content">
+            <div class="content">
+                {% block mainContent %}
+                {% endblock mainContent %}
             </div>
         </article>
     </main>
