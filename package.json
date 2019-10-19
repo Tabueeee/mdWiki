@@ -2,10 +2,10 @@
   "name": "ko-wiki-example",
   "version": "1.0.0",
   "description": "",
-  "main": "src/koaServer.js",
+  "main": "src/main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node src/koaServer.js",
+    "start": "node src/main.js",
     "watch": "nodemon --ext js,min.js,min.css,twig,html --watch client/dist/ --watch client/src/ --watch static/ --watch src/ npm start",
     "verbose": "npm run start -- --v"
   },
@@ -20,11 +20,13 @@
     "mime-types": "^2.1.24",
     "twig": "^1.13.3",
     "uniqid": "^5.0.3",
-    "winston": "^3.2.1"
+    "winston": "^3.2.1",
+    "yargs": "^14.2.0"
   },
   "devDependencies": {
     "@types/koa": "^2.0.50",
     "@types/lunr": "^2.3.2",
+    "@types/yargs": "^13.0.3",
     "dotenv": "^8.1.0",
     "fs-extra": "^8.1.0",
     "nodemon": "^1.19.3"

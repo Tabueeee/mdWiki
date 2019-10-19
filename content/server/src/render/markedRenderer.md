@@ -1,4 +1,4 @@
-# G:/dev/01_projects/mdWiki/src/markedRenderer.js
+# G:/dev/01_projects/mdWiki/src/render/markedRenderer.js
 ```js
 const marked = require('marked');
 const renderer = new marked.Renderer();

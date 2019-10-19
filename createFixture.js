@@ -22,7 +22,7 @@ const typeMap = {
         await writeFileFixture(file, 'client/', 'content/client/');
     }
 
-    let serverFiles = await glob(__dirname + '/src/*');
+    let serverFiles = await glob(__dirname + '/src/**/*+(js|html|scss|ts|twig)');
 
     for (let file of serverFiles) {
         await writeFileFixture(file, 'src/', 'content/server/src/');
