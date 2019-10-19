@@ -7,6 +7,14 @@
 <div class="navbar-menu">
     <div class="navbar-end">
         <div class="navbar-item">
+            <label for="content-search-input"><p>content search:</p></label>
+        </div>
+        <div class="navbar-item">
+            <search-input>
+                {% include '../search-input/search-input-template.html' %}
+            </search-input>
+        </div>
+        <div class="navbar-item">
             <theme-selector></theme-selector>
         </div>
     </div>

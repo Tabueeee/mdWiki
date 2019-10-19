@@ -1,0 +1,43 @@
+// Bulma
+@import "../node_modules/bulma/sass/utilities/all";
+@import "../node_modules/bulma/sass/base/all";
+@import "../node_modules/bulma/sass/grid/columns";
+
+@import "../node_modules/bulma/sass/layout/section";
+
+@import "../node_modules/bulma/sass/components/navbar";
+@import "../node_modules/bulma/sass/components/menu";
+@import "../node_modules/bulma/sass/components/panel";
+
+@import "../node_modules/bulma/sass/elements/box";
+@import "../node_modules/bulma/sass/elements/button";
+@import "../node_modules/bulma/sass/elements/container";
+@import "../node_modules/bulma/sass/elements/content";
+@import "../node_modules/bulma/sass/elements/title";
+
+// no-flex-box-styles
+
+.column-left {
+  float: left;
+
+  @media (max-width: 769px) {
+    float: none;
+  }
+}
+
+// end no-flex-box-styles
+
+.content-wrap {
+  &.container {
+    padding: 15px;
+    max-width: unset;
+  }
+}
+
+main {
+  overflow: auto;
+}
+
+.modal {
+  display: none;
+}

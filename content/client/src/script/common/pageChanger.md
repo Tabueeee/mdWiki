@@ -24,7 +24,8 @@ export class PageChanger {
         this.abortFetch();
         this.broadcastLoadingStateChange({isLoading: true, requestLink: link});
 
-        let getHandler = this.httpHelper.htmlGet(link + '?content=1');
+
+        let getHandler = this.httpHelper.htmlGet(link + (link.indexOf('?') > - 1 ? '&' : '?') + 'content=1');
         this.abortFetch = getHandler.abortFetch;
         getHandler
             .promise

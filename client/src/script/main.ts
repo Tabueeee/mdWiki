@@ -6,13 +6,14 @@ import {getScript} from './common/getScript';
 import * as hljs from 'highlight.js';
 import {HttpHelper} from './common/HttpHelper';
 import {ViewModelFactory} from './view/ViewModelFactory';
-// not injected by browserify - loaded lazily
-import Chart = require('chart.js');
 import {PageState} from './interface/PageState';
 import {PageChanger} from './common/PageChanger';
+import {Actions} from './Actions';
+// not injected by browserify - loaded lazily
+import Chart = require('chart.js');
 // @ts-ignore injected by browserify
 const chartData: BarChartDataSet = require('../../data/mockedChartData.json');
-const flatNavigationEntries: Array<FlatNavigationEntry> = window.serverData.flatNavigationEntries || [];
+const flatNavigationEntries: Array<FlatNavigationEntry> = (window.serverData || {}).flatNavigationEntries || [];
 
 // @ts-ignore injected by browserify
 const getRequestOptions = require('../../data/getRequestOptions.json');
@@ -22,8 +23,15 @@ const pageChanger: PageChanger = new PageChanger(httpHelper);
 const viewModelFactory: ViewModelFactory = new ViewModelFactory();
 
 // Lazily load 3rd Party Scripts
-let chartJSLoadedPromise: Promise<Chart> = getScript<Chart>('https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.bundle.min.js', 'Chart');
+let chartJSLoadedPromise: Promise<Chart> = getScript<Chart>(
+    'https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.bundle.min.js',
+    'Chart'
+);
 
+let mouseTrapLoadedPromise: Promise<any> = getScript<any>(
+    '/mousetrap.js',
+    'Mousetrap'
+);
 let highlightJSLoadedPromise: Promise<typeof hljs> = getScript<typeof hljs>(
     '/highlight.js',
     'hljs'
@@ -42,9 +50,22 @@ highlightJSLoadedPromise
         });
     }).catch(() => undefined);
 
-let koView: KnockoutView = new KnockoutView(pageChanger, chartJSLoadedPromise, viewModelFactory);
+let actions = new Actions(pageChanger, httpHelper);
+
+// register and render view components
+let koView: KnockoutView = new KnockoutView(chartJSLoadedPromise, viewModelFactory, actions);
 koView.registerElements(flatNavigationEntries);
 koView.updateChartData(chartData);
+pageChanger.subscribeLoadingStateChange(koView.onPageChange.bind(koView));
+
+
+mouseTrapLoadedPromise
+    .then(function (Mousetrap: any) {
+        Mousetrap.bind('ctrl+shift+f', function () {
+            koView.toggleSearchModal();
+            return false;
+        });
+    });
 
 // simulate changing chartData
 let intervalIndex = 0;

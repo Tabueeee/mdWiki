@@ -1,0 +1,6 @@
+# G:/dev/01_projects/mdWiki/client/src/component/search-input/search-input-template.html
+```html
+<form action="/searchResult.html" data-bind="submit: visible.bind(null, true)">
+    <input name="q" id="content-search-input" type="text" class="is-large" data-bind="textInput: searchString, hasFocus: hasFocus">
+</form>
+ ```

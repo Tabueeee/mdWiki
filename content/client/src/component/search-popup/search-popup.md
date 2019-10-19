@@ -1,0 +1,25 @@
+# G:/dev/01_projects/mdWiki/client/src/component/search-popup/search-popup.html
+```html
+<div class="modal" data-bind="css: {'is-active': visible}">
+    <div class="modal-background" data-bind="click: visible.bind(null, false)"></div>
+    <div class="modal-card">
+        <header class="modal-card-head">
+            <p class="modal-card-title">content search - <a href="" data-bind="click: function(){$root.changePage('/searchResult.html?q='+searchString());visible(false);}, attr: {href: '/searchResult.html?q='+searchString()}">open in page</a></p>
+            <button class="delete" aria-label="close" data-bind="click: visible.bind(null, false)"></button>
+        </header>
+        <search-input params="hasFocus: true"></search-input>
+        <section class="modal-card-body">
+            <loading-indicator></loading-indicator>
+            <search-results></search-results>
+<!--            <div class="content" data-bind="foreach: searchResults">-->
+<!--                <div class="box">-->
+<!--                    <p data-bind="text: title"></p>-->
+<!--                    <pre data-bind="text: excerpt"></pre>-->
+<!--                    <a href="#" data-bind="click: function(){$root.changePage(url);$component.visible(false);}, text: url"></a>-->
+<!--                </div>-->
+<!--            </div>-->
+        </section>
+        <footer class="modal-card-foot"></footer>
+    </div>
+</div>
+ ```

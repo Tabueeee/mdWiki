@@ -1,6 +1,6 @@
 # G:/dev/01_projects/mdWiki/client/src/component/loading-indicator/loading-indicator-template.html
 ```html
-<div class="loading-indicator" data-bind="visible: $root.isLoading" style="display: none;">
+<div class="loading-indicator" data-bind="visible: $parent.isLoading" style="display: none;">
     <div class="container loading-container">
         <p class="loading-text" style="">
             Loading content...

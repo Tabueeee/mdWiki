@@ -9,6 +9,10 @@
     }
   }
 
+  input[type="text"] {
+    padding: 5px;
+  }
+
   // end no-flex-box-styles
 }
  ```

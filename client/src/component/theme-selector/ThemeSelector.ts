@@ -1,20 +1,17 @@
 import {observable} from 'knockout';
+import {Actions} from '../../script/Actions';
 
 export class ThemeSelector {
 
     public activeTheme = observable('light');
     private readonly srcMap = {
-        'light': '/style' + window.serverData.assetUID + '.css',
+        'light': '/bulma.min.css',
         'dark': '/darkly.min.css'
     };
 
-    public constructor() {
+    public constructor(actions: Actions) {
         this.activeTheme.subscribe((newThemeValue: string) => {
-            let styleElement = document.createElement('link');
-            styleElement.setAttribute('href', this.srcMap[newThemeValue]);
-            styleElement.setAttribute('rel', 'stylesheet');
-            styleElement.setAttribute('type', 'text/css');
-            document.head.appendChild(styleElement);
+            actions.loadStyle(this.srcMap[newThemeValue]);
         });
     }
 }

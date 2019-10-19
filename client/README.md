@@ -24,3 +24,7 @@
 
 - fetch polyfill
 - promise polyfill
+
+
+## TODO / Ideas
+- keep selected theme on new tabs by storage

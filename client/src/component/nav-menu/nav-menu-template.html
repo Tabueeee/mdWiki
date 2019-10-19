@@ -6,7 +6,7 @@
                 <a data-bind="text: name, click: $component.toggle.bind(null, $parent), class: !collapsed ? 'is-active' : ''"></a>
                 <ul data-bind="visible: !collapsed, foreach: items">
                     <li>
-                        <a data-bind="click: $root.changePage.bind(null, url), text: topic, css: {'is-active': $root.currentUrl() == url}"></a>
+                        <a data-bind="click: $root.changePage.bind(null, url), attr: {href: url}, text: topic, css: {'is-active': $root.currentUrl() == url}"></a>
                     </li>
                 </ul>
             </li>

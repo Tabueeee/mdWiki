@@ -1,7 +1,6 @@
 # G:/dev/01_projects/mdWiki/client/src/script/view/knockoutView.ts
 ```typescript
 import {FlatNavigationEntry} from '../interface/FlatNavigationEntry';
-import {PageChanger} from '../common/PageChanger';
 import {FileSearch} from '../../component/file-search/FileSearch';
 import {NavMenu} from '../../component/nav-menu/NavMenu';
 import {applyBindings, bindingHandlers, components, Observable, observable} from 'knockout';
@@ -10,28 +9,41 @@ import {BarChartDataSet} from '../interface/BarChartDataSet';
 import {ViewModelFactory} from './ViewModelFactory';
 import {ThemeSelector} from '../../component/theme-selector/ThemeSelector';
 import {PageState} from '../interface/PageState';
+import {SearchPopup} from '../../component/search-popup/SearchPopup';
+import {Actions} from '../Actions';
 import Chart = require('chart.js');
 
 const useDOMContentAsTemplate = (className: string) => `<div class="${className}" data-bind="template: { nodes: $componentTemplateNodes, data: $component }"></div>`;
 
 export class KnockoutView {
     private chartJsPromise: Promise<Chart>;
+    private actions: Actions;
     private categoriesVMFactory: ViewModelFactory;
     private isLoading: Observable<boolean> = observable(false);
     private rootBindings: any = {};
+    private searchController: SearchPopup;
 
-    public constructor(pageChanger: PageChanger, chartJsPromise: Promise<Chart>, categoriesVMFactory: ViewModelFactory) {
+    public constructor(chartJsPromise: Promise<Chart>, categoriesVMFactory: ViewModelFactory, actions: Actions) {
+        this.actions = actions;
         this.chartJsPromise = chartJsPromise;
         this.categoriesVMFactory = categoriesVMFactory;
-        pageChanger.subscribeLoadingStateChange(this.onPageChange.bind(this));
         // global-scope
         const currentUrl = observable(window.location.pathname);
+
+        let searchString = '';
+        if (window.location.pathname === '/searchResult.html') {
+            searchString = ((window.location.search.substr(1).split('&').map(item => item.split('=')).map(item => {
+                return {key: item[0], value: item[1]};
+            }).find(item => item.key === 'q') || {}).value || '');
+        }
+
+        this.searchController = new SearchPopup(this.actions, searchString);
 
         this.rootBindings = {
             currentUrl: currentUrl,
             changePage: (url: string) => {
                 currentUrl(url);
-                pageChanger.changePage(true, url);
+                this.actions.changePageContent(url);
             },
             // add chart to global scope because lazy - probably better injected via data-attribute or ajax route
             chartFake1: this.categoriesVMFactory.createChartData(),
@@ -44,6 +56,7 @@ export class KnockoutView {
     }
 
     public registerElements(flatNavigationEntries: Array<FlatNavigationEntry>) {
+        let searchController = this.searchController;
         // register handlers
         bindingHandlers.chart = ChartHandler(this.chartJsPromise);
         const categories = this.categoriesVMFactory.createViewCategories(flatNavigationEntries);
@@ -54,16 +67,45 @@ export class KnockoutView {
             {template: useDOMContentAsTemplate('file-search'), viewModel: {instance: new FileSearch(flatNavigationEntries)}}
         );
         components.register(
+            'search-input',
+            {
+                template: {element: 'search-input-template'}, viewModel: function (props: { hasFocus: boolean }) {
+                    if (!props.hasFocus) {
+                        return Object.assign({}, searchController, {hasFocus: observable(true)});
+                    }
+
+                    return searchController;
+                }
+            }
+        );
+        components.register(
+            'search-results',
+            {template: {element: 'search-results-template'}, viewModel: {instance: this.searchController}}
+        );
+
+        components.register(
+            'search-popup',
+            {template: useDOMContentAsTemplate('search-popup'), viewModel: {instance: this.searchController}}
+        );
+        components.register(
             'theme-selector',
-            {template: {element: 'theme-selector-template'}, viewModel: {instance: new ThemeSelector()}}
+            {template: {element: 'theme-selector-template'}, viewModel: {instance: new ThemeSelector(this.actions)}}
         );
         components.register(
             'body-message',
             {template: {element: 'body-message-template'}}
         );
         components.register(
+            'loading-indicator',
+            {template: {element: 'loading-indicator-template'}}
+        );
+        components.register(
             'nav-menu',
-            {template: {element: 'nav-menu-template'}, viewModel: {instance: new NavMenu(categories)}}
+            {
+                template: {element: 'nav-menu-template'}, viewModel: function () {
+                    return new NavMenu(categories);
+                }
+            }
         );
 
         // apply root bindings and all containing component/handler bindings
@@ -95,6 +137,11 @@ export class KnockoutView {
         }
 
         this.isLoading(pageState.isLoading);
+    }
+
+    public toggleSearchModal() {
+        this.searchController.visible(!this.searchController.visible.peek());
+        this.searchController.hasFocus(this.searchController.visible.peek());
     }
 }
 

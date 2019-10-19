@@ -1,8 +1,17 @@
 const path = require('path');
 const fs = require('fs');
 const CleanCSS = require('clean-css');
-const css = fs.readFileSync(path.resolve(__dirname, '..', 'dist/style.css'), 'utf8');
-var options = { };
-var output = new CleanCSS(options).minify(css);
-console.log(path.resolve(__dirname, '..', 'dist/style.css'));
-fs.writeFileSync(path.resolve(__dirname, '..', 'dist/style.css'), output.styles);
+
+[
+    path.resolve(__dirname, '../dist/critical.un.css'),
+    path.resolve(__dirname, '../dist/style.un.css')
+].forEach((filePath) => {
+    let css = fs.readFileSync(filePath, 'utf8');
+    let options = {};
+
+    let output = new CleanCSS(options).minify(css);
+    let outputPath = path.resolve(__dirname, '../dist/', (path.basename(filePath)).replace('.un.css', '.min.css'));
+
+    fs.writeFileSync(outputPath, output.styles);
+    console.log('created: ' + outputPath);
+});

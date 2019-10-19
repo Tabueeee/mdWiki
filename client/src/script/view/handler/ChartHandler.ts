@@ -10,7 +10,7 @@ export function ChartHandler(ChartResolvedPromise: Promise<any>): BindingHandler
         ChartResolvedPromise
             .then((Chart: any) => {
                 let ctx = element.getContext('2d');
-                // 'valueAccessor()' accesses the passed object-key referencing the active context (here: root view model)
+                // 'valueAccessor()' accesses the passed object-key used on the active context (here: root view model)
                 element.chart = new Chart(ctx, toJS(valueAccessor()));
                 element.chart.data = (__assign(element.chart.data, toJS(valueAccessor())).data);
                 element.chart.update();

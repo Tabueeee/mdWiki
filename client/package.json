@@ -2,14 +2,15 @@
   "name": "client",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "src/script/main.ts",
   "scripts": {
     "clean": "node -e \"require('fs-extra').emptyDirSync('dist/');\"",
     "test": "echo \"Error: no test specified\" && exit 1",
     "bundle": "browserify -u chart.js -u highlight.js -t [ stringify --extensions [.html] ] -p [ tsify --project tsconfig.json ] --debug src/script/main.ts > dist/bundle.js",
+    "watch": "watchify -u chart.js -u highlight.js -t [ stringify --extensions [.html] ] -p [ tsify --project tsconfig.json ] --debug src/script/main.ts -o dist/bundle.js",
     "preuglify": "npm run bundle",
     "uglify": "uglifyjs dist/bundle.js --compress --mangle > dist/bundle.min.js",
-    "build-css": "node task/sass.js && node task/cssmin.js && node task/uncss.js",
+    "build-css": "node task/sass.js && node task/uncss.js && node task/cssmin.js",
     "all": "npm run clean && npm run uglify && npm run build-css"
   },
   "author": "",
@@ -34,6 +35,7 @@
     "twig": "^1.13.3",
     "typescript": "^3.6.3",
     "uglify-es": "^3.3.9",
-    "uncss": "^0.17.2"
+    "uncss": "^0.17.2",
+    "watchify": "^3.11.1"
   }
 }
