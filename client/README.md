@@ -1,7 +1,4 @@
-
-
 ## Template delivery techniques
-
 1. Render as default - enhance
     - Header
 2. Render basic alternative - replace
@@ -21,10 +18,3 @@
     - and hidden(3)
 3. Template bundled in js 
     - for replacing (2) 
-
-- fetch polyfill
-- promise polyfill
-
-
-## TODO / Ideas
-- keep selected theme on new tabs by storage
